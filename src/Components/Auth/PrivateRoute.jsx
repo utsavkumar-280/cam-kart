@@ -1,8 +1,7 @@
-import {useState } from "react";
 import { Navigate, Route } from "react-router-dom";
 
 export const PrivateRoute = ({ path, ...props }) => {
-  const [isLoggedIn, setLogin] = useState(true);
+  const isLoggedIn = true;
 
   return isLoggedIn ? (
     <Route {...props} path={path} />

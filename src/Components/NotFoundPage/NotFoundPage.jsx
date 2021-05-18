@@ -1,6 +1,6 @@
 import "./styles.css";
 
-export const ProductDetail = () => {
+export const NotFoundPage = () => {
   return (
     <div>
       
