@@ -3,10 +3,29 @@
 }
 
 .home-container {
-	height: 90vh;
 	font-family: "Montserrat", sans-serif;
 	font-size: 2rem;
 	display: flex;
-	justify-content: center;
-	align-items: center;
+	flex-direction: column;
+	justify-content: space-between;
+	/* align-items: stretch; */
+}
+
+.hero {
+	background: url("./assets//heroBanner.png");
+	min-height: 90vh;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+	color: white;
+}
+
+.catagory-container {
+	background-color: rgb(255, 121, 147);
+	min-height: 80vh;
+}
+
+.brand-container {
+	background-color: rgb(255, 171, 116);
+	min-height: 60vh;
 }
