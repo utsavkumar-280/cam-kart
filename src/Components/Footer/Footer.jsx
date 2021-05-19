@@ -20,7 +20,7 @@ export const Footer=()=> {
           <Link to="/" className="footer-logo">CamKart</Link>
         <div className="connectMe">
           <div className="footer-name-padding">BY</div>
-          <a href="https://www.linkedin.com/in/utsav-kumar-a3a79b187/" className=" footer-name-padding">@UTSAV</a>
+          <a href="https://utsav-kumar.netlify.app/" className=" footer-name-padding">@UTSAV</a>
         </div>
         </div>
       </div>

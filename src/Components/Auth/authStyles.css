@@ -1,4 +1,11 @@
+* {
+	box-sizing: border-box;
+}
 .login-container {
-	/* background-color: brown; */
 	height: 90vh;
+	font-family: "Montserrat", sans-serif;
+	font-size: 2rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }

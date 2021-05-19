@@ -4,4 +4,9 @@
 
 .cart-main {
 	height: 90vh;
+	font-family: "Montserrat", sans-serif;
+	font-size: 2rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }

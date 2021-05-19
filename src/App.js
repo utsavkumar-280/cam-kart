@@ -26,10 +26,8 @@ const App=()=> {
           <Route path="/" element={<Home />} />
           <Route path="/products" element={<ProductsCatalog />} />
           <Route path="/products/:id" element={<ProductDetail />} />
-
           <PrivateRoute path="/wishlist" element={<Wishlist />} />
           <PrivateRoute path="/cart" element={<Cart />} />
-          
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup/> }/>
           <Route path="/forgot-pass" element={<ForgotPassword />} />
