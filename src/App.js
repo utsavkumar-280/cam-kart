@@ -1,5 +1,4 @@
 import './App.css';
-// import { useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
 
 import {
@@ -20,23 +19,24 @@ import {
 
 const App=()=> {
   return (
-    <div className="App">
-      <div className="main-container">
+    <div className="app-container">
+      <div className="app-main">
         <Header/>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/products" element={<ProductsCatalog />} />
           <Route path="/products/:id" element={<ProductDetail />} />
+
           <PrivateRoute path="/wishlist" element={<Wishlist />} />
           <PrivateRoute path="/cart" element={<Cart />} />
+          
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup/> }/>
           <Route path="/forgot-pass" element={<ForgotPassword />} />
-          <Route path="*" element={<NotFoundPage/> }/>
-          
-        </Routes>
-        <Footer/>
+          <Route path="*" element={<NotFoundPage/> }/>  
+        </Routes> 
       </div>
+      <Footer/>
     </div>
   );
 }

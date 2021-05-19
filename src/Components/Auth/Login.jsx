@@ -2,7 +2,8 @@ import "./authStyles.css";
 
 export const Login = () => {
   return (
-    <div>
+    <div className="login-container">
+      <div className="login-main"></div>
       
     </div>
   )

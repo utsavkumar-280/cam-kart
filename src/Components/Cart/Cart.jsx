@@ -2,8 +2,9 @@ import "./cart.css";
 
 export const Cart=()=> {
   return (
-    <div>
-      
+    <div className="cart-container">
+      <div className="cart-main">
+      </div>
     </div>
   )
 }

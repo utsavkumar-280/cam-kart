@@ -2,8 +2,8 @@ import "./styles.css";
 
 export const ProductsCatalog = () => {
   return (
-    <div>
-      
+    <div className="catalog-container">
+      <div className="catalog-main"></div>
     </div>
   )
 }

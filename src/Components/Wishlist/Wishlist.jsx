@@ -2,7 +2,8 @@ import "./wishlist.css";
 
 export const Wishlist = () => {
   return (
-    <div>
+    <div className="wish-container">
+      <div className="wish-main"></div>
       
     </div>
   )
