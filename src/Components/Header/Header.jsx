@@ -1,7 +1,11 @@
 import "./header.css";
 import { Link } from "react-router-dom";
-import Bag from "./assets/bag.svg";
-import Wish from "./assets/like.svg"
+// import Bag from "./assets/bag.svg";
+// import Wish from "./assets/like.svg";
+import { MdCamera } from "react-icons/md";
+import { BsBagFill } from "react-icons/bs";
+import { FiShoppingBag,FiHeart } from "react-icons/fi";
+import { FaRegUserCircle ,FaHeart,FaShoppingBag} from "react-icons/fa";
 
 
 export const Header=()=> {
@@ -9,14 +13,21 @@ export const Header=()=> {
     <div className="head-container">
       <nav>
         <div className="left-head flex-align-center">
-          <Link to="/" className="head-logo">CamKart</Link>
-          <Link to="/products" className="heading">SHOP</Link>
+          <Link to="/" className="head-main-logo">
+            <MdCamera className="head-logo" />
+            <span className="head-camkart">CamKart</span>
+            </Link>
+          <Link to="/products" className="heading head-shop">SHOP</Link>
         </div>
         
         <div className="right-head flex-align-center">
-          <Link to="/login" className="heading">LOGIN</Link>
-          <Link to="/wishlist" className="heading"><img src={Wish} alt="wishlist-img" className="head-icons"/></Link>
-          <Link to="/cart" className="heading"><img src={Bag} alt="cart-img" className="head-icons"/></Link>
+          <Link to="/login" className="heading head-login ">
+            <FaRegUserCircle className="head-icons head-rev-invisible"/>
+            <span className="head-hidden">LOGIN</span>
+          </Link>
+          <Link to="/wishlist" className="heading "><FiHeart className="head-icons"/></Link>
+          <Link to="/cart" className="heading"><FiShoppingBag className="head-icons"/></Link>
+          
         </div>
       </nav>
     </div>

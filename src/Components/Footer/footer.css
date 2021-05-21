@@ -65,3 +65,36 @@
 	color: white;
 	padding: 0rem 1rem;
 }
+
+@media screen and (max-width: 1024px) {
+	.footer-main {
+		width: 95%;
+	}
+}
+
+@media screen and (max-width: 411px) {
+	.footer-main {
+		width: 95%;
+		padding: 2rem 0rem;
+		display: flex;
+		flex-direction: column-reverse;
+		justify-content: space-between;
+		align-items: center;
+	}
+	.connectMe {
+		justify-content: center;
+	}
+	.footer-left {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		margin: 1rem 0 0 0;
+	}
+	.footer-para {
+		font-size: 1.5rem;
+	}
+	.socialNav > a {
+		font-size: 1rem;
+	}
+}
