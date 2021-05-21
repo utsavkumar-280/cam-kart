@@ -8,9 +8,9 @@
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
-	/* align-items: stretch; */
 }
 
+/* Hero Section */
 .hero {
 	background: linear-gradient(transparent, rgba(255, 255, 255, 0.034)),
 		url("./assets//heroBanner.png");
@@ -24,15 +24,6 @@
 	transition: background-position 0.25s;
 }
 
-.catagory-container {
-	background-color: #ffffff;
-	min-height: 80vh;
-}
-
-.brand-container {
-	background-color: #f5f4fa;
-	min-height: 60vh;
-}
 .hero-text {
 	margin: 12.5vh 0;
 	padding: 0 1.5rem;
@@ -76,6 +67,167 @@
 	color: #200e66;
 	cursor: pointer;
 }
+.hero-button:hover {
+	background-color: #a191dd;
+}
+/* Home Section */
+
+.home-main {
+	/* background-color: chartreuse; */
+	min-height: 100vh;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+.home-head-text {
+	font-size: 4rem;
+	font-weight: 700;
+	color: #200e66;
+}
+
+/* Categories Section */
+.category-container {
+	width: 80%;
+	background-color: #ffffff;
+	min-height: 80vh;
+	padding: 4rem 2rem;
+}
+
+/* Brand Section */
+.brand-container {
+	width: 80%;
+	background-color: #ffffff;
+	min-height: 60vh;
+	padding: 4rem 2rem;
+}
+.brand-main-grid {
+	display: grid;
+	grid-auto-flow: row;
+	grid-template-columns: repeat(4, 1fr);
+	grid-template-rows: auto;
+	grid-gap: 3rem;
+	margin: 4rem 0rem;
+}
+.brand {
+	height: 10vh;
+}
+
+.brand-sony {
+	background: linear-gradient(#f5f4fa2c, #f5f4fa48), url("./assets//sony.svg");
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+.brand-sony:hover {
+	background: url("./assets//sony.svg");
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.brand-sigma {
+	background: linear-gradient(#f5f4fa2c, #f5f4fa48), url("./assets//sigma.svg");
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: contain;
+}
+.brand-sigma:hover {
+	background: url("./assets//sigma.svg");
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: contain;
+}
+.brand-canon {
+	background: linear-gradient(#f5f4fa2c, #f5f4fa48), url("./assets//canon.svg");
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: contain;
+}
+.brand-canon:hover {
+	background: url("./assets//canon.svg");
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: contain;
+}
+
+.brand-nikon {
+	background: linear-gradient(#f5f4fa2c, #f5f4fa48), url("./assets//nikon.svg");
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+.brand-nikon:hover {
+	background: url("./assets//nikon.svg");
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.brand-panasonic {
+	background: linear-gradient(#f5f4fa2c, #f5f4fa48),
+		url("./assets//panasonic.svg");
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+.brand-panasonic:hover {
+	background: url("./assets//panasonic.svg");
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.brand-fujifilm {
+	background: linear-gradient(#f5f4fa2c, #f5f4fa48),
+		url("./assets//fujifilm.svg");
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+.brand-fujifilm:hover {
+	background: url("./assets//fujifilm.svg");
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.brand-dji {
+	background: linear-gradient(#f5f4fa2c, #f5f4fa48), url("./assets//dji.svg");
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: contain;
+}
+.brand-dji:hover {
+	background: url("./assets//dji.svg");
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: contain;
+}
+
+.brand-gopro {
+	background: linear-gradient(#f5f4fa2c, #f5f4fa48), url("./assets//gopro.svg");
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: contain;
+}
+.brand-gopro:hover {
+	background: url("./assets//gopro.svg");
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: contain;
+}
+.brand-logo {
+	background-color: #f5f4fa;
+	border-radius: 1rem;
+	padding: 2rem;
+	box-shadow: rgba(65, 65, 65, 0.1) 0px 10px 15px -3px,
+		rgba(63, 63, 63, 0.05) 0px 4px 6px -2px;
+}
+.brand-logo:hover {
+	box-shadow: rgba(0, 0, 0, 0.13) 0px 10px 15px -3px,
+		rgba(0, 0, 0, 0.055) 0px 4px 6px -2px;
+}
 
 @media screen and (max-width: 1024px) {
 	.hero-text {
@@ -86,12 +238,49 @@
 		background-position: left center;
 		transition: all 0.5s;
 	}
+
+	.brand-main-grid {
+		grid-template-columns: repeat(3, 1fr);
+	}
+	/* Categories Section */
+	.category-container {
+		width: 95%;
+		background-color: #ffffff;
+	}
+
+	/* Brand Section */
+	.brand-container {
+		width: 95%;
+	}
 }
-@media screen and (max-width: 411px) {
+
+@media screen and (max-width: 780px) {
+	.brand-main-grid {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+
+@media screen and (max-width: 480px) {
 	.hero-text {
 		width: 90%;
 	}
 	.hero-head-large {
 		font-size: 5rem;
+	}
+
+	.brand-main-grid {
+		grid-template-columns: 1fr;
+		align-content: center;
+	}
+	/* Categories Section */
+	.category-container {
+		width: 90%;
+		padding: 1rem 0rem;
+	}
+
+	/* Brand Section */
+	.brand-container {
+		width: 90%;
+		padding: 1rem 0rem;
 	}
 }
