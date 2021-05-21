@@ -12,20 +12,86 @@
 }
 
 .hero {
-	background: url("./assets//heroBanner.png");
+	background: linear-gradient(transparent, rgba(255, 255, 255, 0.034)),
+		url("./assets//heroBanner.png");
 	min-height: 90vh;
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: center;
 	color: white;
+	display: flex;
+	justify-content: center;
+	transition: background-position 0.25s;
 }
 
 .catagory-container {
-	background-color: rgb(255, 121, 147);
+	background-color: #ffffff;
 	min-height: 80vh;
 }
 
 .brand-container {
-	background-color: rgb(255, 171, 116);
+	background-color: #f5f4fa;
 	min-height: 60vh;
+}
+.hero-text {
+	margin: 12.5vh 0;
+	padding: 0 1.5rem;
+	width: 80%;
+}
+.flex-column-center {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	justify-content: flex-start;
+}
+
+.hero-head-small {
+	font-size: 1.5rem;
+	letter-spacing: 0.25rem;
+	color: #c0b6e4;
+	margin-left: 0.75rem;
+}
+.hero-head-large {
+	font-size: 6rem;
+	font-weight: 800;
+	margin-left: 0.75rem;
+}
+.hero-head-medium {
+	margin-left: 0.75rem;
+	font-size: 1.75rem;
+	font-weight: 500;
+}
+
+.margin-5 {
+	margin-top: 2.5vh;
+	margin-bottom: 2.5vh;
+}
+.hero-button {
+	padding: 2.5rem 3.5rem;
+	font-family: "Montserrat", sans-serif;
+	font-size: 2rem;
+	font-weight: 700;
+	border-radius: 1rem;
+	background-color: #9480df;
+	color: #200e66;
+	cursor: pointer;
+}
+
+@media screen and (max-width: 1024px) {
+	.hero-text {
+		width: 95%;
+		padding: 0 0.75rem;
+	}
+	.hero {
+		background-position: left center;
+		transition: all 0.25s;
+	}
+}
+@media screen and (max-width: 411px) {
+	.hero-text {
+		width: 90%;
+	}
+	.hero-head-large {
+		font-size: 5rem;
+	}
 }
