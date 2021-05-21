@@ -10,7 +10,14 @@ export const Home = () => {
           <div className="hero-head-small margin-5">20% OFF PROMOTIONAL SALE</div>
           <div className="hero-head-large">Whatever you need for a</div>
           <div className="hero-head-large">great picture.</div>
-          <div className="hero-head-medium margin-5"> Get all you products at 25% off .Dslr, Mirrorless,Action camera, Video camera </div>
+          <div className="hero-head-medium margin-5">
+            <p>
+              Choose from our wide range of products<br/>
+              including DSLRs, Mirrorless cameras,<br/>
+              Action cameras,Video cameras,<br/>
+              and many more.<br/>
+            </p>
+          </div>
           <Link to="/products">
             <button className="hero-button margin-5">Browse Products</button>
           </Link>

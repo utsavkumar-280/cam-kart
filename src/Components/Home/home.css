@@ -48,7 +48,7 @@
 .hero-head-small {
 	font-size: 1.5rem;
 	letter-spacing: 0.25rem;
-	color: #c0b6e4;
+	color: #d5b6e4;
 	margin-left: 0.75rem;
 }
 .hero-head-large {
@@ -58,8 +58,8 @@
 }
 .hero-head-medium {
 	margin-left: 0.75rem;
-	font-size: 1.75rem;
-	font-weight: 500;
+	font-size: 2rem;
+	letter-spacing: 0.25px;
 }
 
 .margin-5 {
@@ -84,7 +84,7 @@
 	}
 	.hero {
 		background-position: left center;
-		transition: all 0.25s;
+		transition: all 0.5s;
 	}
 }
 @media screen and (max-width: 411px) {
