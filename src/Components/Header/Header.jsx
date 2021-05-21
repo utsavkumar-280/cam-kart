@@ -1,11 +1,8 @@
 import "./header.css";
 import { Link } from "react-router-dom";
-// import Bag from "./assets/bag.svg";
-// import Wish from "./assets/like.svg";
 import { MdCamera } from "react-icons/md";
-import { BsBagFill } from "react-icons/bs";
 import { FiShoppingBag,FiHeart } from "react-icons/fi";
-import { FaRegUserCircle ,FaHeart,FaShoppingBag} from "react-icons/fa";
+import { FaRegUserCircle } from "react-icons/fa";
 
 
 export const Header=()=> {
