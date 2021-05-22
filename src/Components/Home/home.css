@@ -91,7 +91,54 @@
 	width: 80%;
 	background-color: #ffffff;
 	min-height: 80vh;
-	padding: 4rem 2rem;
+	margin: 10rem 2rem 0rem 2rem;
+}
+.cat-main-grid {
+	display: grid;
+	grid-auto-flow: rows;
+	grid-template-columns: repeat(4, 1fr);
+	grid-template-rows: auto;
+	justify-content: center;
+	align-content: center;
+	grid-gap: 3rem;
+	margin: 4rem 0rem;
+}
+.cat-card-container {
+	height: 40vh;
+	padding: 4rem 1.5rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+	background-color: #f5f4fa;
+	border-radius: 1rem;
+}
+.cat-card-img {
+	height: 15vh;
+	width: auto;
+}
+.cat-card-head {
+	font-size: 2.25rem;
+	font-weight: 700;
+	font-family: "Montserrat", sans-serif;
+	text-align: center;
+	color: #200e66;
+}
+.cat-card-button {
+	padding: 1.75rem 5rem;
+	background-color: rgb(255, 255, 255);
+	color: #200e66;
+	font-size: 1.75rem;
+	font-weight: 700;
+	font-family: "Montserrat", sans-serif;
+	border-radius: 1rem;
+	cursor: pointer;
+	box-shadow: rgba(138, 138, 138, 0.1) 0px 10px 15px -3px,
+		rgba(138, 137, 137, 0.05) 0px 4px 6px -2px;
+}
+.cat-card-button:hover {
+	box-shadow: rgba(68, 68, 68, 0.1) 0px 10px 15px -3px,
+		rgba(66, 66, 66, 0.05) 0px 4px 6px -2px;
 }
 
 /* Brand Section */
@@ -99,7 +146,7 @@
 	width: 80%;
 	background-color: #ffffff;
 	min-height: 60vh;
-	padding: 4rem 2rem;
+	margin: 10rem 2rem 0rem 2rem;
 }
 .brand-main-grid {
 	display: grid;
@@ -229,6 +276,12 @@
 		rgba(0, 0, 0, 0.055) 0px 4px 6px -2px;
 }
 
+@media screen and (max-width: 1340px) {
+	.cat-main-grid {
+		grid-template-columns: repeat(3, 1fr);
+	}
+}
+
 @media screen and (max-width: 1024px) {
 	.hero-text {
 		width: 95%;
@@ -258,6 +311,9 @@
 	.brand-main-grid {
 		grid-template-columns: repeat(2, 1fr);
 	}
+	.cat-main-grid {
+		grid-template-columns: repeat(2, 1fr);
+	}
 }
 
 @media screen and (max-width: 480px) {
@@ -271,6 +327,13 @@
 	.brand-main-grid {
 		grid-template-columns: 1fr;
 		align-content: center;
+	}
+
+	.cat-main-grid {
+		grid-template-columns: repeat(1, 1fr);
+	}
+	.cat-card-container {
+		padding: 2.75rem 1rem;
 	}
 	/* Categories Section */
 	.category-container {
