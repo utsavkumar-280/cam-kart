@@ -1,4 +1,5 @@
 import "./App.css";
+import { useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
 
 import {
@@ -15,8 +16,27 @@ import {
 	Signup,
 	NotFoundPage,
 } from "./Components";
+import { useAppDataContext } from "./Context";
+import { callProducts } from "./utils/networkCall";
 
 const App = () => {
+	const { state, dispatch } = useAppDataContext();
+
+	useEffect(() => {
+		(async () => {
+			try {
+				const {
+					data: { response },
+				} = await callProducts("http://localhost:8080/products");
+
+				dispatch({ type: "SET_PRODUCTS", payload: response });
+			} catch (error) {
+				console.log(error);
+			}
+		})();
+	}, []);
+
+	console.log(state.products);
 	return (
 		<div className="app-container">
 			<div className="app-main">
