@@ -11,7 +11,7 @@ export const AppDataProvider = ({ children }) => {
 		filters: {
 			categoryFilter: [],
 			brandFilter: [],
-			includeOutOfStocks: false,
+			includeOutOfStock: true,
 		},
 		sortBy: "",
 	};
