@@ -20,7 +20,7 @@ import { useAppDataContext } from "./Context";
 import { callProducts } from "./utils/networkCall";
 
 const App = () => {
-	const { state, dispatch } = useAppDataContext();
+	const { dispatch } = useAppDataContext();
 
 	useEffect(() => {
 		(async () => {
@@ -34,9 +34,7 @@ const App = () => {
 				console.log(error);
 			}
 		})();
-	}, []);
-
-	console.log(state.products);
+	}, [dispatch]);
 	return (
 		<div className="app-container">
 			<div className="app-main">
