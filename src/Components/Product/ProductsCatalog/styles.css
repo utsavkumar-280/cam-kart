@@ -12,6 +12,7 @@
 	display: grid;
 	grid-template-columns: 1fr 3.5fr;
 	grid-template-rows: auto;
+	grid-template-areas: "filter-area product-area";
 }
 
 .products-container {
@@ -20,10 +21,12 @@
 	grid-template-columns: repeat(4, 1fr);
 	grid-template-rows: auto;
 	grid-gap: 1.5vh;
+	grid-area: product-area;
 }
 
 .products-card {
-	min-height: 45vh;
+	min-height: 50vh;
+	max-height: 57.5vh;
 	background-color: #f5f4fa;
 	display: grid;
 	grid-template-columns: auto;
@@ -134,6 +137,25 @@
 	display: flex;
 	justify-content: space-between;
 }
+.cta-button-container-out-of-stock {
+	width: 100%;
+	margin: 3rem 0rem 1rem 0rem;
+	display: flex;
+	justify-content: stretch;
+}
+
+.cta-button-out-of-stock {
+	width: 100%;
+	padding: 1rem 2rem;
+	background-color: rgb(255, 255, 255);
+	font-size: 1.75rem;
+	font-weight: 700;
+	text-decoration: none;
+	font-family: "Montserrat", sans-serif;
+	border-radius: 1rem;
+	text-align: center;
+	color: #4d25e0;
+}
 
 .cta-button {
 	padding: 1rem 2rem;
@@ -149,6 +171,7 @@
 	box-shadow: rgba(209, 209, 209, 0.1) 0px 10px 15px -3px,
 		rgba(190, 190, 190, 0.05) 0px 4px 6px -2px;
 }
+
 .cta-button:hover {
 	color: #4d25e0;
 	transition: all 0.25s ease;
@@ -170,4 +193,88 @@
 	font-size: 2.25rem;
 	font-weight: 800;
 	display: block;
+}
+
+@media screen and (max-width: 1640px) {
+	.catalog-main {
+		grid-template-columns: 1fr 3fr;
+		grid-template-areas: "filter-area product-area";
+	}
+
+	.products-container {
+		grid-template-columns: repeat(3, 1fr);
+	}
+
+	.products-card {
+		min-height: 45vh;
+		max-height: 50vh;
+		grid-template-rows: 1fr 1fr;
+	}
+}
+
+@media screen and (max-width: 1340px) {
+	.catalog-main {
+		grid-template-columns: 1fr 2.75fr;
+	}
+
+	.products-container {
+		grid-template-columns: repeat(2, 1fr);
+	}
+
+	.products-img {
+		height: auto;
+		width: 15vw;
+	}
+}
+
+@media screen and (max-width: 1240px) {
+	.catalog-main {
+		grid-template-columns: 1fr 2.25fr;
+	}
+}
+
+@media screen and (max-width: 1024px) {
+	.catalog-main {
+		width: 95%;
+	}
+}
+
+@media screen and (max-width: 940px) {
+	.catalog-main {
+		grid-template-columns: 1fr 2.75fr;
+		grid-template-areas: "product-area product-area";
+	}
+	.products-img {
+		height: auto;
+		width: 20vw;
+	}
+}
+
+@media screen and (max-width: 640px) {
+	.catalog-main {
+		width: 95%;
+	}
+	.products-container {
+		grid-template-columns: repeat(1, 1fr);
+	}
+	.products-img {
+		height: auto;
+		width: 45vw;
+	}
+	.products-card {
+		min-height: 75vh;
+		grid-template-rows: 1.75fr 1fr;
+	}
+}
+
+@media screen and (max-width: 380px) {
+	.products-card {
+		min-height: 70vh;
+	}
+}
+
+@media screen and (max-width: 320px) {
+	.products-card {
+		min-height: 80vh;
+	}
 }

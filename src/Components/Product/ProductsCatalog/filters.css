@@ -1,9 +1,11 @@
 .filter-container {
+	grid-area: filter-area;
 	background-color: white;
+	color: #200e66;
 	height: 90vh;
 	position: sticky;
 	top: 10vh;
-	padding: 1.5vh;
+	padding: 1.5vh 0.5vh;
 }
 .filter-main {
 	background-color: #f5f4fa;
@@ -11,4 +13,54 @@
 	box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px,
 		rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
 	height: 100%;
+	padding: 1rem 2rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: flex-start;
+}
+.filter-head-container {
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+}
+
+.filter-head {
+	font-size: 2rem;
+	font-weight: 700;
+	letter-spacing: 0.1rem;
+}
+.filter-body {
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	align-items: flex-start;
+	list-style: none;
+}
+
+.filter-list {
+	list-style: none;
+	padding: 0.25rem;
+}
+.filter-name {
+	font-size: 1.75rem;
+	font-weight: 600;
+	letter-spacing: 0.1rem;
+}
+
+.filter-check {
+	margin: 0rem 0.5rem;
+}
+
+.label-name {
+	font-size: 1.75rem;
+	font-weight: 500;
+	letter-spacing: 0.05rem;
+}
+
+@media screen and (max-width: 940px) {
+	.filter-container {
+		display: none;
+	}
 }
