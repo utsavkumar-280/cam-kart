@@ -7,6 +7,7 @@ export const getSortedData = (state, arr) => {
 		return [...arr].sort((product1, product2) => {
 			return Number(product1.price) - Number(product2.price);
 		});
+	return arr;
 };
 
 export const getFilteredData = (state, arr) => {
@@ -26,4 +27,5 @@ export const getFilteredData = (state, arr) => {
 			state.filters.brandFilter.includes(product.brand)
 		);
 	}
+	return newArr;
 };

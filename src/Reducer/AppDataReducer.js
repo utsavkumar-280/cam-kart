@@ -59,7 +59,7 @@ export const AppDataReducer = (state, { type, payload }) => {
 				filters: {
 					categoryFilter: [],
 					brandFilter: [],
-					includeOutOfStock: false,
+					includeOutOfStock: true,
 				},
 				sortBy: "",
 			};
