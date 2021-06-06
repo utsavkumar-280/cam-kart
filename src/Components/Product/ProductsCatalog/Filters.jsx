@@ -93,7 +93,7 @@ export const Filters = () => {
 											<input
 												className="filter-check"
 												type="checkbox"
-												checked={state.filters.brandFilter.includes(brand)}
+												checked={state.filters.brandFilter.includes(brand.name)}
 												onChange={() =>
 													dispatch({
 														type: "FILTER_BY_BRANDS",

@@ -3,21 +3,6 @@ import { Link } from "react-router-dom";
 import { categories, brands } from "../../utils/data";
 import { useAppDataContext } from "../../Context";
 
-// const brandStyle = {
-// 	background: `linear-gradient(#f5f4fa2c, #f5f4fa48), url(${brand.img})`,
-// 	backgroundPosition: "center",
-// 	backgroundRepeat: "no-repeat",
-// 	backgroundSize: `${brand.cover ? "cover" : "contain"}`,
-// 	height: "10vh",
-
-// 	"&:hover": {
-// 		background: `url(${brand.img})`,
-// 		backgroundPosition: "center",
-// 		backgroundRepeat: "no-repeat",
-// 		backgroundSize: `${brand.cover ? "cover" : "contain"}`,
-// 	},
-// };
-
 export const Home = () => {
 	const { dispatch } = useAppDataContext();
 	return (
@@ -41,7 +26,14 @@ export const Home = () => {
 							<br />
 						</p>
 					</div>
-					<Link to="/products">
+					<Link
+						to="/products"
+						onClick={() => {
+							dispatch({
+								type: "CLEAR_ALL_FILTERS",
+							});
+						}}
+					>
 						<button className="hero-button margin-5">Browse Products</button>
 					</Link>
 				</div>

@@ -25,7 +25,7 @@
 }
 
 .hero-text {
-	margin: 12.5vh 0;
+	margin: 7.5vh 0;
 	padding: 0 1.5rem;
 	width: 80%;
 }
@@ -190,6 +190,7 @@
 
 @media screen and (max-width: 1024px) {
 	.hero-text {
+		margin: 12.5vh 0;
 		width: 95%;
 		padding: 0 0.75rem;
 	}
