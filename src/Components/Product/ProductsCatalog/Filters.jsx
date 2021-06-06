@@ -67,16 +67,16 @@ export const Filters = () => {
 												className="filter-check"
 												type="checkbox"
 												checked={state.filters.categoryFilter.includes(
-													category
+													category.type
 												)}
 												onChange={() =>
 													dispatch({
 														type: "FILTER_BY_CATEGORIES",
-														payload: category,
+														payload: category.type,
 													})
 												}
 											/>
-											{category}
+											{category.type}
 										</label>
 									</li>
 								);
@@ -97,11 +97,11 @@ export const Filters = () => {
 												onChange={() =>
 													dispatch({
 														type: "FILTER_BY_BRANDS",
-														payload: brand,
+														payload: brand.name,
 													})
 												}
 											/>
-											{brand}
+											{brand.name}
 										</label>
 									</li>
 								);
