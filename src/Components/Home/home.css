@@ -156,124 +156,30 @@
 	grid-gap: 3rem;
 	margin: 4rem 0rem;
 }
-.brand {
-	height: 10vh;
-}
-
-.brand-sony {
-	background: linear-gradient(#f5f4fa2c, #f5f4fa48), url("./assets//sony.svg");
-	background-position: center;
-	background-repeat: no-repeat;
-	background-size: cover;
-}
-.brand-sony:hover {
-	background: url("./assets//sony.svg");
-	background-position: center;
-	background-repeat: no-repeat;
-	background-size: cover;
-}
-
-.brand-sigma {
-	background: linear-gradient(#f5f4fa2c, #f5f4fa48), url("./assets//sigma.svg");
-	background-position: center;
-	background-repeat: no-repeat;
-	background-size: contain;
-}
-.brand-sigma:hover {
-	background: url("./assets//sigma.svg");
-	background-position: center;
-	background-repeat: no-repeat;
-	background-size: contain;
-}
-.brand-canon {
-	background: linear-gradient(#f5f4fa2c, #f5f4fa48), url("./assets//canon.svg");
-	background-position: center;
-	background-repeat: no-repeat;
-	background-size: contain;
-}
-.brand-canon:hover {
-	background: url("./assets//canon.svg");
-	background-position: center;
-	background-repeat: no-repeat;
-	background-size: contain;
-}
-
-.brand-nikon {
-	background: linear-gradient(#f5f4fa2c, #f5f4fa48), url("./assets//nikon.svg");
-	background-position: center;
-	background-repeat: no-repeat;
-	background-size: cover;
-}
-.brand-nikon:hover {
-	background: url("./assets//nikon.svg");
-	background-position: center;
-	background-repeat: no-repeat;
-	background-size: cover;
-}
-
-.brand-panasonic {
-	background: linear-gradient(#f5f4fa2c, #f5f4fa48),
-		url("./assets//panasonic.svg");
-	background-position: center;
-	background-repeat: no-repeat;
-	background-size: cover;
-}
-.brand-panasonic:hover {
-	background: url("./assets//panasonic.svg");
-	background-position: center;
-	background-repeat: no-repeat;
-	background-size: cover;
-}
-
-.brand-fujifilm {
-	background: linear-gradient(#f5f4fa2c, #f5f4fa48),
-		url("./assets//fujifilm.svg");
-	background-position: center;
-	background-repeat: no-repeat;
-	background-size: cover;
-}
-.brand-fujifilm:hover {
-	background: url("./assets//fujifilm.svg");
-	background-position: center;
-	background-repeat: no-repeat;
-	background-size: cover;
-}
-
-.brand-dji {
-	background: linear-gradient(#f5f4fa2c, #f5f4fa48), url("./assets//dji.svg");
-	background-position: center;
-	background-repeat: no-repeat;
-	background-size: contain;
-}
-.brand-dji:hover {
-	background: url("./assets//dji.svg");
-	background-position: center;
-	background-repeat: no-repeat;
-	background-size: contain;
-}
-
-.brand-gopro {
-	background: linear-gradient(#f5f4fa2c, #f5f4fa48), url("./assets//gopro.svg");
-	background-position: center;
-	background-repeat: no-repeat;
-	background-size: contain;
-}
-.brand-gopro:hover {
-	background: url("./assets//gopro.svg");
-	background-position: center;
-	background-repeat: no-repeat;
-	background-size: contain;
-}
 .brand-logo {
 	background-color: #f5f4fa;
 	border-radius: 1rem;
 	padding: 2rem;
+	transition: all 0.25s ease;
 	box-shadow: rgba(65, 65, 65, 0.1) 0px 10px 15px -3px,
 		rgba(63, 63, 63, 0.05) 0px 4px 6px -2px;
 }
 .brand-logo:hover {
+	transition: all 0.25s ease;
 	box-shadow: rgba(0, 0, 0, 0.13) 0px 10px 15px -3px,
 		rgba(0, 0, 0, 0.055) 0px 4px 6px -2px;
+}
+.hover-effect {
+	height: 100%;
+	width: 100%;
+	transition: all 0.25s ease;
+	background: linear-gradient(#f5f4fa2c, #f5f4fa48);
+}
+.hover-effect:hover {
+	height: 100%;
+	width: 100%;
+	transition: all 0.25s ease;
+	background: transparent;
 }
 
 @media screen and (max-width: 1340px) {

@@ -1,14 +1,22 @@
 import "./home.css";
 import { Link } from "react-router-dom";
-import Dslr from "./assets/dslr.png";
-import Mirrorless from "./assets/mirrorless.png";
-import Action from "./assets/action.png";
-import Instant from "./assets/instant.png";
-import Lens from "./assets/lens.png";
-import Gimbal from "./assets/gimbal.png";
-import Tripod from "./assets/tripod.png";
-import Accessories from "./assets/accessories.png";
+import { categories, brands } from "../../utils/data";
 import { useAppDataContext } from "../../Context";
+
+// const brandStyle = {
+// 	background: `linear-gradient(#f5f4fa2c, #f5f4fa48), url(${brand.img})`,
+// 	backgroundPosition: "center",
+// 	backgroundRepeat: "no-repeat",
+// 	backgroundSize: `${brand.cover ? "cover" : "contain"}`,
+// 	height: "10vh",
+
+// 	"&:hover": {
+// 		background: `url(${brand.img})`,
+// 		backgroundPosition: "center",
+// 		backgroundRepeat: "no-repeat",
+// 		backgroundSize: `${brand.cover ? "cover" : "contain"}`,
+// 	},
+// };
 
 export const Home = () => {
 	const { dispatch } = useAppDataContext();
@@ -43,280 +51,71 @@ export const Home = () => {
 				<section className="category-container">
 					<div className="home-head-text">Category</div>
 					<div className="cat-main-grid">
-						<div className="cat-card-container">
-							<div className="cat-card-head">DSLR CAMERAS</div>
-							<img src={Dslr} alt="dslr-img" className="cat-card-img" />
-							<Link
-								to="/products"
-								onClick={() => {
-									dispatch({
-										type: "CLEAR_ALL_FILTERS",
-									});
-									dispatch({ type: "FILTER_BY_CATEGORIES", payload: "DSLR" });
-								}}
-							>
-								<button className="cat-card-button">Shop Now</button>
-							</Link>
-						</div>
-						<div className="cat-card-container">
-							<div className="cat-card-head">MIRRORLESS CAMERAS</div>
-							<img src={Mirrorless} alt="dslr-img" className="cat-card-img" />
-							<Link
-								to="/products"
-								onClick={() => {
-									dispatch({
-										type: "CLEAR_ALL_FILTERS",
-									});
-									dispatch({
-										type: "FILTER_BY_CATEGORIES",
-										payload: "Mirrorless",
-									});
-								}}
-							>
-								<button className="cat-card-button">Shop Now</button>
-							</Link>
-						</div>
-						<div className="cat-card-container">
-							<div className="cat-card-head">ACTION CAMERAS</div>
-							<img src={Action} alt="dslr-img" className="cat-card-img" />
-							<Link
-								to="/products"
-								onClick={() => {
-									dispatch({
-										type: "CLEAR_ALL_FILTERS",
-									});
-									dispatch({
-										type: "FILTER_BY_CATEGORIES",
-										payload: "Action",
-									});
-								}}
-							>
-								<button className="cat-card-button">Shop Now</button>
-							</Link>
-						</div>
-						<div className="cat-card-container">
-							<div className="cat-card-head">INSTANT CAMERAS</div>
-							<img src={Instant} alt="dslr-img" className="cat-card-img" />
-							<Link
-								to="/products"
-								onClick={() => {
-									dispatch({
-										type: "CLEAR_ALL_FILTERS",
-									});
-									dispatch({
-										type: "FILTER_BY_CATEGORIES",
-										payload: "Instant",
-									});
-								}}
-							>
-								<button className="cat-card-button">Shop Now</button>
-							</Link>
-						</div>
-						<div className="cat-card-container">
-							<div className="cat-card-head">LENS</div>
-							<img src={Lens} alt="dslr-img" className="cat-card-img" />
-							<Link
-								to="/products"
-								onClick={() => {
-									dispatch({
-										type: "CLEAR_ALL_FILTERS",
-									});
-									dispatch({
-										type: "FILTER_BY_CATEGORIES",
-										payload: "Lens",
-									});
-								}}
-							>
-								<button className="cat-card-button">Shop Now</button>
-							</Link>
-						</div>
-						<div className="cat-card-container">
-							<div className="cat-card-head">GIMBALS</div>
-							<img src={Gimbal} alt="dslr-img" className="cat-card-img" />
-							<Link
-								to="/products"
-								onClick={() => {
-									dispatch({
-										type: "CLEAR_ALL_FILTERS",
-									});
-									dispatch({
-										type: "FILTER_BY_CATEGORIES",
-										payload: "Gimbal",
-									});
-								}}
-							>
-								<button className="cat-card-button">Shop Now</button>
-							</Link>
-						</div>
-						<div className="cat-card-container">
-							<div className="cat-card-head">TRIPODS</div>
-							<img src={Tripod} alt="dslr-img" className="cat-card-img" />
-							<Link
-								to="/products"
-								onClick={() => {
-									dispatch({
-										type: "CLEAR_ALL_FILTERS",
-									});
-									dispatch({
-										type: "FILTER_BY_CATEGORIES",
-										payload: "Tripod",
-									});
-								}}
-							>
-								<button className="cat-card-button">Shop Now</button>
-							</Link>
-						</div>
-						<div className="cat-card-container">
-							<div className="cat-card-head">ACCESSORIES</div>
-							<img src={Accessories} alt="dslr-img" className="cat-card-img" />
-							<Link
-								to="/products"
-								onClick={() => {
-									dispatch({
-										type: "CLEAR_ALL_FILTERS",
-									});
-									dispatch({
-										type: "FILTER_BY_CATEGORIES",
-										payload: "Accessories",
-									});
-								}}
-							>
-								<button className="cat-card-button">Shop Now</button>
-							</Link>
-						</div>
+						{categories.map((category, idx) => {
+							return (
+								<div className="cat-card-container" key={idx}>
+									<div className="cat-card-head">{category.title} </div>
+									<img
+										src={category.img}
+										alt={`${category.type}-img`}
+										className="cat-card-img"
+									/>
+									<Link
+										to="/products"
+										onClick={() => {
+											dispatch({
+												type: "CLEAR_ALL_FILTERS",
+											});
+											dispatch({
+												type: "FILTER_BY_CATEGORIES",
+												payload: category.type,
+											});
+										}}
+									>
+										<button className="cat-card-button">Shop Now</button>
+									</Link>
+								</div>
+							);
+						})}
 					</div>
 				</section>
 				<section className="brand-container">
 					<div className="home-head-text">Shop by Brand</div>
 					<div className="brand-main-grid">
-						<Link
-							to="/products"
-							onClick={() => {
-								dispatch({
-									type: "CLEAR_ALL_FILTERS",
-								});
-								dispatch({
-									type: "FILTER_BY_BRANDS",
-									payload: "Sony",
-								});
-							}}
-						>
-							<div className="brand-logo">
-								<div className=" brand-sony brand"></div>
-							</div>
-						</Link>
-						<Link
-							to="/products"
-							onClick={() => {
-								dispatch({
-									type: "CLEAR_ALL_FILTERS",
-								});
-								dispatch({
-									type: "FILTER_BY_BRANDS",
-									payload: "Canon",
-								});
-							}}
-						>
-							<div className="brand-logo">
-								<div className=" brand brand-canon"></div>
-							</div>
-						</Link>
-						<Link
-							to="/products"
-							onClick={() => {
-								dispatch({
-									type: "CLEAR_ALL_FILTERS",
-								});
-								dispatch({
-									type: "FILTER_BY_BRANDS",
-									payload: "Nikon",
-								});
-							}}
-						>
-							<div className="brand-logo">
-								<div className=" brand brand-nikon"></div>
-							</div>
-						</Link>
-						<Link
-							to="/products"
-							onClick={() => {
-								dispatch({
-									type: "CLEAR_ALL_FILTERS",
-								});
-								dispatch({
-									type: "FILTER_BY_BRANDS",
-									payload: "Panasonic",
-								});
-							}}
-						>
-							<div className="brand-logo">
-								<div className=" brand brand-panasonic"></div>
-							</div>
-						</Link>
-						<Link
-							to="/products"
-							onClick={() => {
-								dispatch({
-									type: "CLEAR_ALL_FILTERS",
-								});
-								dispatch({
-									type: "FILTER_BY_BRANDS",
-									payload: "Fujifilm",
-								});
-							}}
-						>
-							<div className="brand-logo">
-								<div className=" brand brand-fujifilm"></div>
-							</div>
-						</Link>
-						<Link
-							to="/products"
-							onClick={() => {
-								dispatch({
-									type: "CLEAR_ALL_FILTERS",
-								});
-								dispatch({
-									type: "FILTER_BY_BRANDS",
-									payload: "Sigma",
-								});
-							}}
-						>
-							<div className="brand-logo">
-								<div className=" brand brand-sigma"></div>
-							</div>
-						</Link>
-						<Link
-							to="/products"
-							onClick={() => {
-								dispatch({
-									type: "CLEAR_ALL_FILTERS",
-								});
-								dispatch({
-									type: "FILTER_BY_BRANDS",
-									payload: "Dji",
-								});
-							}}
-						>
-							<div className="brand-logo">
-								<div className=" brand brand-dji"></div>
-							</div>
-						</Link>
-						<Link
-							to="/products"
-							onClick={() => {
-								dispatch({
-									type: "CLEAR_ALL_FILTERS",
-								});
-								dispatch({
-									type: "FILTER_BY_BRANDS",
-									payload: "GoPro",
-								});
-							}}
-						>
-							<div className="brand-logo">
-								<div className=" brand brand-gopro"></div>
-							</div>
-						</Link>
+						{brands
+							.filter((brand) => brand.name !== "Digitek")
+							.map((brand) => {
+								return (
+									<Link
+										to="/products"
+										onClick={() => {
+											dispatch({
+												type: "CLEAR_ALL_FILTERS",
+											});
+											dispatch({
+												type: "FILTER_BY_BRANDS",
+												payload: brand.name,
+											});
+										}}
+									>
+										<div className="brand-logo">
+											<div
+												style={{
+													backgroundImage: `url(${brand.img})`,
+													backgroundPosition: "center",
+													backgroundRepeat: "no-repeat",
+													backgroundSize: `${
+														brand.cover ? "cover" : "contain"
+													}`,
+													height: "10vh",
+												}}
+											>
+												<div className="hover-effect"></div>
+											</div>
+										</div>
+									</Link>
+								);
+							})}
 					</div>
 				</section>
 			</div>
