@@ -86,3 +86,5 @@ export const categories = [
 		img: "https://i.postimg.cc/tCXvT0rp/accessories.png",
 	},
 ];
+
+export const CAMKART_API = "https://camkart-apis.herokuapp.com";

@@ -1,6 +1,7 @@
 import "./App.css";
 import { useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
+import { CAMKART_API } from "./utils";
 
 import {
 	Footer,
@@ -27,7 +28,7 @@ const App = () => {
 			try {
 				const {
 					data: { response },
-				} = await callProducts("http://localhost:8080/products");
+				} = await callProducts(`${CAMKART_API}/products`);
 
 				dispatch({ type: "SET_PRODUCTS", payload: response });
 			} catch (error) {
