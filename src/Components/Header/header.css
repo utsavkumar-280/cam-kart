@@ -4,8 +4,8 @@
 }
 
 .head-container {
-	background-color: #4d25e0;
-	color: white;
+	background-color: var(--primary);
+	color: var(--head-secondary);
 	min-height: 10vh;
 	position: sticky;
 	top: 0;
@@ -23,7 +23,7 @@
 	justify-content: space-between;
 }
 .head-main a {
-	color: white;
+	color: var(--head-secondary);
 	padding: 0rem 1.5rem;
 	text-decoration: none;
 	font-family: "Montserrat", sans-serif;
@@ -32,7 +32,7 @@
 	font-size: 3.5rem;
 	font-weight: 800;
 	font-family: "Montserrat", sans-serif;
-	color: white;
+	color: var(--head-secondary);
 	text-decoration: none;
 	display: flex;
 	justify-content: space-between;

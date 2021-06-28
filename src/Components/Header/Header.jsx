@@ -19,7 +19,7 @@ export const Header = () => {
 				</div>
 
 				<div className="right-head flex-align-center">
-					<Link to="/login" className="heading head-login ">
+					<Link to="/profile" className="heading head-login ">
 						<FaRegUserCircle className="head-icons head-rev-invisible" />
 						<span className="head-hidden">LOGIN</span>
 					</Link>

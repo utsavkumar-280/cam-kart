@@ -7,11 +7,12 @@ export const Home = () => {
 	const { dispatch } = useAppDataContext();
 	return (
 		<div className="home-container">
-			<section className="hero ">
+			<section className="hero">
 				<div className=" flex-column-center hero-text">
 					<div className="hero-head-small margin-5">
 						20% OFF PROMOTIONAL SALE
 					</div>
+
 					<div className="hero-head-large">Whatever you need for a</div>
 					<div className="hero-head-large">great picture.</div>
 					<div className="hero-head-medium margin-5">
