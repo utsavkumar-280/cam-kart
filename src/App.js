@@ -11,8 +11,9 @@ import {
 	ProductsCatalog,
 	PrivateRoute,
 	Wishlist,
-	Cart,
 	Login,
+	Profile,
+	Cart,
 	ForgotPassword,
 	Signup,
 	NotFoundPage,
@@ -46,6 +47,7 @@ const App = () => {
 					<Route path="/products/:id" element={<ProductDetail />} />
 					<PrivateRoute path="/wishlist" element={<Wishlist />} />
 					<PrivateRoute path="/cart" element={<Cart />} />
+					<PrivateRoute path="/profile" element={<Profile />} />
 					<Route path="/login" element={<Login />} />
 					<Route path="/signup" element={<Signup />} />
 					<Route path="/forgot-pass" element={<ForgotPassword />} />

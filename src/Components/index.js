@@ -6,6 +6,6 @@ export { Wishlist } from "./Wishlist";
 export { Cart } from "./Cart";
 export { ProductsCatalog, ProductDetail } from "./Product";
 
-export { Login, Signup, ForgotPassword, PrivateRoute } from "./Auth";
+export { Signup, ForgotPassword, PrivateRoute, Login, Profile } from "./Auth";
 
 export { NotFoundPage } from "./NotFoundPage";
