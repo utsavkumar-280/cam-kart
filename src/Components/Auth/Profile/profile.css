@@ -1,0 +1,13 @@
+.profile-container {
+	font-family: "Montserrat", sans-serif;
+	display: flex;
+	justify-content: center;
+}
+.profile-main {
+	width: 80%;
+	min-height: 90vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}

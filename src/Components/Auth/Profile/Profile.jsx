@@ -1,4 +1,4 @@
-import "./styles.css";
+import "./profile.css";
 
 export const Profile = () => {
 	return (

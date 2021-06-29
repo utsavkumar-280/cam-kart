@@ -1,24 +1,31 @@
+import "./authStyles.css";
 import { useState } from "react";
-import { Link } from "react-router-dom";
 import { Formik, Field, Form, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 
-export const Login = () => {
+export const ForgotPassword = () => {
 	const [isHidden, setIsHidden] = useState(true);
+	const [isAlsoHidden, setIsAlsoHidden] = useState(true);
 	return (
 		<div className="form-container">
 			<div className="form-main">
 				<div className="form-card">
-					<h1 className="form-head">Login</h1>
+					<h1 className="form-head">Change Password</h1>
 					<Formik
-						initialValues={{ email: "", password: "" }}
+						initialValues={{ email: "", password: "", passwordConf: "" }}
 						validationSchema={Yup.object({
 							email: Yup.string()
 								.email("Invalid email address")
 								.required("Email required"),
 							password: Yup.string()
-								.min(8, "pasword must be 8 characters or more")
+								.matches(
+									/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$/,
+									"password should contain minimum 8 characters (Atleast a number, an uppercase character and a lowercase character)"
+								)
+								.required("Password required"),
+							passwordConf: Yup.string()
+								.oneOf([Yup.ref("password"), null], "Passwords must match")
 								.required("Password required"),
 						})}
 						onSubmit={(values, { setSubmitting }) => {
@@ -41,13 +48,12 @@ export const Login = () => {
 										className="input-field"
 									/>
 								</div>
-
-								<ErrorMessage name="email" className="form-error" />
+								<ErrorMessage name="email" />
 							</div>
 
 							<div className="input-control">
 								<label htmlFor="password" className="form-label">
-									Password
+									New Password
 								</label>
 								<div className="input-field-container">
 									<span className="input-grid width100">
@@ -70,23 +76,44 @@ export const Login = () => {
 										</button>
 									</span>
 								</div>
-								<ErrorMessage name="password" className="form-error" />
+								<div className="error-container">
+									<ErrorMessage name="password" />
+								</div>
+							</div>
+
+							<div className="input-control">
+								<label htmlFor="passwordConf" className="form-label">
+									Confirm Password
+								</label>
+								<div className="input-field-container">
+									<span className="input-grid width100">
+										<Field
+											name="passwordConf"
+											placeholder="Re-enter password"
+											className="input-pass-field"
+											type={isAlsoHidden ? "password" : "text"}
+										/>
+										<button
+											type="button"
+											className="input-pass-cta"
+											onClick={() =>
+												setIsAlsoHidden((isAlsoHidden) => !isAlsoHidden)
+											}
+										>
+											{isAlsoHidden ? (
+												<FaEyeSlash className="hide-cta" />
+											) : (
+												<FaEye className="hide-cta" />
+											)}
+										</button>
+									</span>
+								</div>
+								<ErrorMessage name="passwordConf" />
 							</div>
 
 							<button type="submit" className="form-submit-cta">
-								Login
+								Change Password
 							</button>
-							<Link to="/forgot-pass" className="form-links marginTop1">
-								Forgot Password?
-							</Link>
-							<p className="form-text marginTop1">
-								Not Registered yet?
-								<span>
-									<Link to="/signup" className="form-links">
-										Sign up
-									</Link>
-								</span>
-							</p>
 						</Form>
 					</Formik>
 				</div>

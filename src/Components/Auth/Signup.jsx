@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Formik, Field, Form, ErrorMessage } from "formik";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import * as Yup from "yup";
-import "./styles.css";
+import "./authStyles.css";
 
 export const Signup = () => {
 	const [isHidden, setIsHidden] = useState(true);
