@@ -4,16 +4,16 @@ export const AppDataReducer = (state, { type, payload }) => {
 			return { ...state, products: payload };
 
 		case "SET_CART":
-			return { ...state, productsInCart: payload };
+			return { ...state, cart: payload };
 
 		case "SET_WISHLIST":
-			return { ...state, productsInWishlist: payload };
+			return { ...state, wishlist: payload };
 
-		case "SET_PRICE_HIGH_TO_LOW":
-			return { ...state, sortBy: "SET_PRICE_HIGH_TO_LOW" };
+		case "SET_ORDER":
+			return { ...state, orders: payload };
 
-		case "SET_PRICE_LOW_TO_HIGH":
-			return { ...state, sortBy: "SET_PRICE_LOW_TO_HIGH" };
+		case "RESET_CART":
+			return { ...state, cart: { products: [], address: null } };
 
 		case "FILTER_BY_CATEGORIES":
 			return state.filters.categoryFilter.includes(payload)

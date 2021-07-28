@@ -3,8 +3,15 @@ import { Link } from "react-router-dom";
 import { MdCamera } from "react-icons/md";
 import { FiShoppingBag, FiHeart } from "react-icons/fi";
 import { FaRegUserCircle } from "react-icons/fa";
+import { useAuth } from "../../Context";
 
 export const Header = () => {
+	const {
+		state: {
+			userDetails: { userFirstName },
+		},
+	} = useAuth();
+
 	return (
 		<div className="head-container">
 			<nav className="head-main">
@@ -21,7 +28,9 @@ export const Header = () => {
 				<div className="right-head flex-align-center">
 					<Link to="/profile" className="heading head-login ">
 						<FaRegUserCircle className="head-icons head-rev-invisible" />
-						<span className="head-hidden">LOGIN</span>
+						<span className="head-hidden">
+							{userFirstName ? `Hi, ${userFirstName}` : "LOGIN"}
+						</span>
 					</Link>
 					<Link to="/wishlist" className="heading ">
 						<FiHeart className="head-icons" />

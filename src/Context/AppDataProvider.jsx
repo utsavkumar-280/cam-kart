@@ -6,8 +6,12 @@ const AppDataContext = createContext();
 export const AppDataProvider = ({ children }) => {
 	const initialState = {
 		products: [],
-		productsInCart: [],
-		productsInWishlist: [],
+		cart: {
+			products: [],
+			address: null,
+		},
+		wishlist: [],
+		orders: [],
 		filters: {
 			categoryFilter: [],
 			brandFilter: [],
