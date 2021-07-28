@@ -2,7 +2,6 @@ import "./App.css";
 import { useEffect } from "react";
 import { Routes, Route, useNavigate, useLocation } from "react-router-dom";
 import { setupAuthExceptionHandler } from "./utils";
-import { CAMKART_API } from "./utils";
 
 import {
 	Footer,
@@ -40,18 +39,14 @@ const App = () => {
 	}, [pathname]);
 
 	useEffect(() => {
-		(async () => {
-			try {
-				const {
-					data: { response },
-				} = await callProducts(`${CAMKART_API}/products`);
-
-				dispatch({ type: "SET_PRODUCTS", payload: response });
-			} catch (error) {
-				console.log(error);
-			}
-		})();
+		callProducts(dispatch);
 	}, [dispatch]);
+
+	// useEffect(() => {
+	// 	if (token) {
+	// 		callProducts
+	// 	}
+	// })
 
 	console.log({ state });
 

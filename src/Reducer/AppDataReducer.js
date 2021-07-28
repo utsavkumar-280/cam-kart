@@ -3,13 +3,13 @@ export const AppDataReducer = (state, { type, payload }) => {
 		case "SET_PRODUCTS":
 			return { ...state, products: payload };
 
-		case "SET_CART":
-			return { ...state, cart: payload };
-
 		case "SET_WISHLIST":
 			return { ...state, wishlist: payload };
 
-		case "SET_ORDER":
+		case "SET_CART":
+			return { ...state, cart: payload };
+
+		case "SET_ORDERS":
 			return { ...state, orders: payload };
 
 		case "RESET_CART":

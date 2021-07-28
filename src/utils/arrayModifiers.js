@@ -29,3 +29,11 @@ export const getFilteredData = (state, arr) => {
 	}
 	return newArr;
 };
+
+export const isPresentInArray = (array, id) => {
+	if (array) {
+		return array.find((item) => item.productId._id === id);
+	} else {
+		return false;
+	}
+};

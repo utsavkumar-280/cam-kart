@@ -77,9 +77,10 @@ export const Home = () => {
 					<div className="brand-main-grid">
 						{brands
 							.filter((brand) => brand.name !== "Digitek")
-							.map((brand) => {
+							.map((brand, no) => {
 								return (
 									<Link
+										key={no}
 										to="/products"
 										onClick={() => {
 											dispatch({
