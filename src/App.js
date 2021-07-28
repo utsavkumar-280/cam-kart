@@ -1,6 +1,7 @@
 import "./App.css";
 import { useEffect } from "react";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useNavigate, useLocation } from "react-router-dom";
+import { setupAuthExceptionHandler } from "./utils";
 import { CAMKART_API } from "./utils";
 
 import {
@@ -18,11 +19,25 @@ import {
 	Signup,
 	NotFoundPage,
 } from "./Components";
-import { useAppDataContext } from "./Context";
-import { callProducts } from "./utils/networkCall";
+import { useAppDataContext, useAuth } from "./Context";
+import { callProducts } from "./utils";
 
 const App = () => {
-	const { dispatch } = useAppDataContext();
+	const navigate = useNavigate();
+	const { state, dispatch } = useAppDataContext();
+	const {
+		state: { token },
+		logout,
+	} = useAuth();
+
+	useEffect(() => {
+		setupAuthExceptionHandler(logout, navigate);
+	}, []);
+
+	const { pathname } = useLocation();
+	useEffect(() => {
+		window.scrollTo(0, 0);
+	}, [pathname]);
 
 	useEffect(() => {
 		(async () => {
@@ -37,6 +52,9 @@ const App = () => {
 			}
 		})();
 	}, [dispatch]);
+
+	console.log({ state });
+
 	return (
 		<div className="app-container">
 			<div className="app-main">

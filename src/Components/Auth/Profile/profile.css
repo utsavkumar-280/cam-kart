@@ -1,8 +1,10 @@
 .profile-container {
-	font-family: "Montserrat", sans-serif;
+	width: 100%;
+	font-family: "Poppins", sans-serif;
 	display: flex;
 	justify-content: center;
 }
+
 .profile-main {
 	width: 80%;
 	min-height: 90vh;
@@ -10,4 +12,52 @@
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
+	margin: 1rem 0;
+}
+
+.profile-card {
+	min-width: 40vw;
+	min-height: 50vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+	padding: 5rem;
+	background-color: var(--back-secondary);
+	border-radius: 3rem;
+}
+
+.profile-logo {
+	font-size: 15rem;
+	color: var(--primary);
+}
+
+.profile-text {
+	color: var(--head-primary);
+	font-family: "Montserrat", sans-serif;
+	margin: 0.325rem;
+	font-size: 1.75rem;
+	letter-spacing: 0.1rem;
+	font-weight: 500;
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+}
+.primary-color {
+	color: var(--primary);
+	font-weight: 400;
+}
+@media screen and (max-width: 880px) {
+	.profile-main {
+		width: 95%;
+	}
+	.profile-card {
+		min-width: 80vw;
+		padding: 2rem;
+	}
+}
+@media screen and (max-width: 540px) {
+	.profile-text {
+		display: grid;
+		grid-template-columns: auto;
+	}
 }

@@ -87,4 +87,6 @@ export const categories = [
 	},
 ];
 
-export const CAMKART_API = "https://camkart-apis.herokuapp.com";
+export const CAMKART_API = " http://localhost:8080";
+
+// export const CAMKART_API = "https://camkart-apis.herokuapp.com";
