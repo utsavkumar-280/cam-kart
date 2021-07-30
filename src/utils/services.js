@@ -27,6 +27,7 @@ export const callWishlist = async (dispatch, token) => {
 				Authorization: `Bearer ${token}`,
 			},
 		});
+		console.log({ callWishlistResponse: response });
 		dispatch({ type: "SET_WISHLIST", payload: response });
 	} catch (error) {
 		console.log(error);
@@ -124,7 +125,7 @@ export const addToWishlist = async ({
 				Authorization: `Bearer ${token}`,
 			},
 		});
-
+		console.log({ response });
 		dispatch({ type: "SET_WISHLIST", payload: response });
 	} catch (error) {
 		console.log(error);
@@ -144,13 +145,13 @@ export const addToCart = async ({ dispatch, product, setDisable, token }) => {
 			data: {
 				_id: product._id,
 				quantity: 1,
-				active: true,
+				isActive: true,
 			},
 			headers: {
 				Authorization: `Bearer ${token}`,
 			},
 		});
-
+		// console.log({ response });
 		dispatch({ type: "SET_CART", payload: response });
 	} catch (error) {
 		console.log(error);
@@ -175,7 +176,7 @@ export const incProductInCart = async ({
 			data: {
 				_id: product._id,
 				quantity: product.quantity + 1,
-				active: true,
+				isActive: true,
 			},
 			headers: {
 				Authorization: `Bearer ${token}`,
@@ -206,7 +207,7 @@ export const decProductInCart = async ({
 			data: {
 				_id: product._id,
 				quantity: product.quantity - 1,
-				active: true,
+				isActive: true,
 			},
 			headers: {
 				Authorization: `Bearer ${token}`,
@@ -237,7 +238,7 @@ export const removeProductInCart = async ({
 			data: {
 				_id: product._id,
 				quantity: 0,
-				active: false,
+				isActive: false,
 			},
 			headers: {
 				Authorization: `Bearer ${token}`,
