@@ -1,5 +1,19 @@
 export { brands, categories, CAMKART_API } from "./data";
-export { callProducts } from "./services";
+
+export {
+	callProducts,
+	callWishlist,
+	callCart,
+	callOrders,
+	callAddress,
+	removeAddress,
+	addToWishlist,
+	addToCart,
+	incProductInCart,
+	decProductInCart,
+	removeProductInCart,
+} from "./services";
+
 export {
 	getSortedData,
 	getFilteredData,
