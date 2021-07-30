@@ -32,7 +32,7 @@ export const getFilteredData = (state, arr) => {
 
 export const isPresentInArray = (array, id) => {
 	if (array) {
-		return array.find((item) => item.productId._id === id);
+		return array.find((item) => item?.product?._id === id);
 	} else {
 		return false;
 	}
