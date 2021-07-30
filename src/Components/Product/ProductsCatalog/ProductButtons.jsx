@@ -1,18 +1,20 @@
 import "./styles.css";
-import { Link } from "react-router-dom";
-import { HiHeart, HiOutlineHeart } from "react-icons/hi";
+import { LikeButton } from "./LikeButton";
+import { CartButton } from "./CartButton";
 
-export const ProductButtons = ({ inStock }) => {
+export const ProductButtons = ({ inStock, product, isDisable, setDisable }) => {
 	return inStock ? (
 		<div className="cta-button-container">
-			<Link to="/" className="cta-button">
-				Add to Cart
-			</Link>
-
-			<Link to="/" className="cta-button">
-				<HiHeart className="cta-button-icon-filled" />
-				<HiOutlineHeart className="cta-button-icon-outline" />
-			</Link>
+			<CartButton
+				product={product}
+				isDisable={isDisable}
+				setDisable={setDisable}
+			/>
+			<LikeButton
+				product={product}
+				isDisable={isDisable}
+				setDisable={setDisable}
+			/>
 		</div>
 	) : (
 		<div className="cta-button-container-out-of-stock">
