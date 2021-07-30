@@ -1,7 +1,7 @@
 import "./wishlist.css";
 import { useState } from "react";
 import { CartButton } from "../Product/ProductsCatalog/CartButton";
-import { LikeButton } from "../Product/ProductsCatalog/LikeButton";
+import { RemoveBtn } from "./RemoveBtn";
 
 export const WishlistCard = ({ product }) => {
 	const [isDisable, setDisable] = useState(false);
@@ -30,7 +30,7 @@ export const WishlistCard = ({ product }) => {
 						isDisable={isDisable}
 						setDisable={setDisable}
 					/>
-					<LikeButton
+					<RemoveBtn
 						product={product}
 						isDisable={isDisable}
 						setDisable={setDisable}

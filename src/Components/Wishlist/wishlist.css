@@ -17,6 +17,7 @@
 }
 .wish-main > h1 {
 	padding: 0.5rem 0;
+	margin: 1rem 0;
 }
 .wish-main > h2 {
 	margin: 4rem 0;
@@ -52,12 +53,6 @@
 	.products-img {
 		height: auto;
 		width: 15vw;
-	}
-}
-
-@media screen and (max-width: 1024px) {
-	.wish-main {
-		width: 95%;
 	}
 }
 
