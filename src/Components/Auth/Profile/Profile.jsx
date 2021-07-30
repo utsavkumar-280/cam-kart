@@ -1,36 +1,38 @@
 import "./profile.css";
-import { useAuth } from "../../../Context";
-import { FaUserCircle } from "react-icons/fa";
+import { NavLink, Outlet } from "react-router-dom";
 
 export const Profile = () => {
-	const {
-		state: {
-			userDetails: { userFirstName, userLastName, userEmail },
-		},
-
-		logout,
-	} = useAuth();
-
 	return (
 		<div className="profile-container">
 			<div className="profile-main">
-				<div className="profile-card">
-					<FaUserCircle className="profile-logo" />
-					<div>
-						<p className="profile-text">
-							Firstname: <span className="primary-color">{userFirstName}</span>
-						</p>
-						<p className="profile-text">
-							Lastname: <span className="primary-color">{userLastName}</span>
-						</p>
-						<p className="profile-text">
-							Email: <span className="primary-color">{userEmail}</span>
-						</p>
-					</div>
-
-					<button onClick={() => logout()} className="form-submit-cta">
-						Logout
-					</button>
+				<div className="profile-links-container">
+					<NavLink
+						to="/profile"
+						end
+						className="profile-links-cta"
+						activeClassName="profile-links-active"
+					>
+						Profile
+					</NavLink>
+					<NavLink
+						to="/profile/addresses"
+						end
+						className="profile-links-cta"
+						activeClassName="profile-links-active"
+					>
+						Addresses
+					</NavLink>
+					<NavLink
+						to="/profile/orders"
+						end
+						className="profile-links-cta"
+						activeClassName="profile-links-active"
+					>
+						Orders
+					</NavLink>
+				</div>
+				<div className="profile-routes">
+					<Outlet />
 				</div>
 			</div>
 		</div>

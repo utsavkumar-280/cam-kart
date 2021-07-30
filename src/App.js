@@ -7,19 +7,21 @@ import {
 	Footer,
 	Header,
 	Home,
-	ProductDetail,
 	ProductsCatalog,
 	PrivateRoute,
 	Wishlist,
 	Login,
 	Profile,
+	Order,
+	Address,
 	Cart,
 	ForgotPassword,
 	Signup,
 	NotFoundPage,
 } from "./Components";
 import { useAppDataContext, useAuth } from "./Context";
-import { callProducts } from "./utils";
+import { callProducts, callWishlist, callCart, callAddress } from "./utils";
+import { ProfileInfo } from "./Components/Auth/Profile/ProfileInfo";
 
 const App = () => {
 	const navigate = useNavigate();
@@ -27,6 +29,7 @@ const App = () => {
 	const {
 		state: { token },
 		logout,
+		dispatch: authDispatch,
 	} = useAuth();
 
 	useEffect(() => {
@@ -42,11 +45,13 @@ const App = () => {
 		callProducts(dispatch);
 	}, [dispatch]);
 
-	// useEffect(() => {
-	// 	if (token) {
-	// 		callProducts
-	// 	}
-	// })
+	useEffect(() => {
+		if (token) {
+			callWishlist(dispatch, token);
+			callCart(dispatch, token);
+			callAddress(authDispatch, token);
+		}
+	}, []);
 
 	console.log({ state });
 
@@ -57,10 +62,14 @@ const App = () => {
 				<Routes>
 					<Route path="/" element={<Home />} />
 					<Route path="/products" element={<ProductsCatalog />} />
-					<Route path="/products/:id" element={<ProductDetail />} />
+
 					<PrivateRoute path="/wishlist" element={<Wishlist />} />
 					<PrivateRoute path="/cart" element={<Cart />} />
-					<PrivateRoute path="/profile" element={<Profile />} />
+					<PrivateRoute path="/profile" element={<Profile />}>
+						<PrivateRoute path="/" element={<ProfileInfo />} />
+						<PrivateRoute path="/addresses" element={<Address />} />
+						<PrivateRoute path="/orders" element={<Order />} />
+					</PrivateRoute>
 					<Route path="/login" element={<Login />} />
 					<Route path="/signup" element={<Signup />} />
 					<Route path="/forgot-pass" element={<ForgotPassword />} />
