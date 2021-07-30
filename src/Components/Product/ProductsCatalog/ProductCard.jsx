@@ -1,21 +1,22 @@
+import { useState } from "react";
 import "./styles.css";
 import { ProductButtons } from "./ProductButtons";
-import { Link } from "react-router-dom";
 import { BsFillStarFill } from "react-icons/bs";
 
 export const ProductCard = ({ product }) => {
+	const [isDisable, setDisable] = useState(false);
 	return (
 		<div className="products-card">
-			<Link to="/" className="products-img-container">
+			<div className="products-img-container">
 				<img src={product.img} alt="product-img" className="products-img" />
-			</Link>
+			</div>
 
 			<div className="products-text">
 				<div className="products-title-info">
 					<p className="products-brand ">{product.brand}</p>
-					<Link to="/login" className="products-name">
+					<div className="products-name">
 						<p>{product.name}</p>
-					</Link>
+					</div>
 
 					<div className="products-rating">
 						<div className="products-stars-container">
@@ -33,7 +34,12 @@ export const ProductCard = ({ product }) => {
 					<p className="products-offer">({product.offer}%)</p>
 				</div>
 
-				<ProductButtons inStock={product.inStock} />
+				<ProductButtons
+					inStock={product.inStock}
+					product={product}
+					isDisable={isDisable}
+					setDisable={setDisable}
+				/>
 			</div>
 		</div>
 	);

@@ -7,7 +7,6 @@ import { getSortedData, getFilteredData } from "../../../utils/arrayModifiers";
 
 export const ProductsCatalog = () => {
 	const { state } = useAppDataContext();
-	console.log(state);
 	const sortedData = getSortedData(state, state.products);
 	const filteredData = getFilteredData(state, sortedData);
 

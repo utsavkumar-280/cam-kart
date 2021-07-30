@@ -189,6 +189,12 @@
 	font-weight: 800;
 	display: none;
 }
+.cta-button-icon-active {
+	font-size: 2.25rem;
+	font-weight: 800;
+	color: var(--primary);
+	display: block;
+}
 .cta-button-icon-outline {
 	font-size: 2.25rem;
 	font-weight: 800;
