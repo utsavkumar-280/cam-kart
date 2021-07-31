@@ -58,6 +58,7 @@
 	border-radius: 3rem;
 	border: 0.15rem solid #e3e1ed;
 	background-color: var(--back-primary);
+	font-family: "Montserrat", sans-serif;
 	margin: 0 0 1rem 0;
 	transition: all 0.25s ease;
 }
@@ -70,7 +71,12 @@
 	font-size: 1.6rem;
 	font-weight: 600;
 	color: var(--head-primary);
+	font-family: "Montserrat", sans-serif;
 	padding: 0.75rem 0rem;
+}
+
+.form-error {
+	font-family: "Montserrat", sans-serif;
 }
 
 .error-container {
@@ -205,7 +211,7 @@
 		box-shadow: none;
 	}
 	.form-field-container {
-		width: auto;
+		width: 100%;
 		padding: 0 1rem 1rem 1rem;
 	}
 }
