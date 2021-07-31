@@ -81,7 +81,11 @@ export const callAddress = async (dispatch, token) => {
 				Authorization: `Bearer ${token}`,
 			},
 		});
-		dispatch({ type: "SET_ADDRESS_DETAILS", payload: response });
+		console.log({ addressResponse: response });
+		dispatch({
+			type: "SET_ADDRESS_DETAILS",
+			payload: { addressDetails: response },
+		});
 	} catch (error) {
 		console.log(error);
 	}
@@ -98,7 +102,10 @@ export const removeAddress = async ({ dispatch, token, address, setError }) => {
 				Authorization: `Bearer ${token}`,
 			},
 		});
-		dispatch({ type: "SET_ADDRESS_DETAILS", payload: response });
+		dispatch({
+			type: "SET_ADDRESS_DETAILS",
+			payload: { addressDetails: response },
+		});
 	} catch (error) {
 		console.log(error);
 		setError("Please Try Again!");
