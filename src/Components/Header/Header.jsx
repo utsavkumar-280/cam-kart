@@ -3,12 +3,17 @@ import { Link } from "react-router-dom";
 import { MdCamera } from "react-icons/md";
 import { FiShoppingBag, FiHeart } from "react-icons/fi";
 import { FaRegUserCircle } from "react-icons/fa";
-import { useAuth } from "../../Context";
+import { useAuth, useAppDataContext } from "../../Context";
 
 export const Header = () => {
 	const {
+		state: { wishlist, cart },
+	} = useAppDataContext();
+	console.log({ wishlist, cart });
+	const {
 		state: {
 			userDetails: { userFirstName },
+			token,
 		},
 	} = useAuth();
 
@@ -32,11 +37,17 @@ export const Header = () => {
 							{userFirstName ? `Hi, ${userFirstName}` : "LOGIN"}
 						</span>
 					</Link>
-					<Link to="/wishlist" className="heading ">
+					<Link to="/wishlist" className="heading icon-container">
 						<FiHeart className="head-icons" />
+						{wishlist?.products?.length > 0 && (
+							<div className="icon-counter">{wishlist?.products?.length}</div>
+						)}
 					</Link>
-					<Link to="/cart" className="heading">
+					<Link to="/cart" className="heading icon-container">
 						<FiShoppingBag className="head-icons" />
+						{cart?.products?.length > 0 && (
+							<div className="icon-counter">{cart?.products?.length}</div>
+						)}
 					</Link>
 				</div>
 			</nav>
