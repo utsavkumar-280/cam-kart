@@ -1,0 +1,125 @@
+.adddress-container {
+	width: 100%;
+	font-family: "Poppins", sans-serif;
+	display: flex;
+	justify-content: center;
+}
+
+.adddress-main {
+	width: 80%;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: center;
+}
+
+.adddress-main > h1 {
+	margin: 1rem 0;
+
+	font-size: 3rem;
+	font-weight: 600;
+	letter-spacing: 0.025rem;
+}
+
+.add-address-cta {
+	font-family: "Poppins", sans-serif;
+	font-size: 2rem;
+	font-weight: 500;
+	color: var(--head-secondary);
+	background-color: var(--primary);
+	border-radius: 2rem;
+	padding: 1rem 3rem;
+	margin-top: 1.5rem;
+	cursor: pointer;
+}
+
+.addressCard-container {
+	margin: 1.5rem;
+	padding: 2rem 3rem;
+	border-radius: 3rem;
+	background-color: var(--back-secondary);
+}
+
+.addressCard-info > h2 {
+	margin: 0.5rem 0;
+	font-size: 2rem;
+	font-weight: 600;
+	letter-spacing: 0.01rem;
+	font-family: "Poppins", sans-serif;
+}
+.addressCard-info > p {
+	margin: 0.325rem 0;
+	font-size: 1.75rem;
+	font-weight: 400;
+	letter-spacing: 0.02rem;
+	font-family: "Poppins", sans-serif;
+}
+
+.addressCard-cta-container {
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+}
+
+.addressCard-cta {
+	cursor: pointer;
+	color: var(--head-secondary);
+	background-color: var(--primary);
+	padding: 1rem 2.5rem;
+	margin-top: 1rem;
+	margin-right: 1rem;
+	font-size: 1.75rem;
+	font-weight: 500;
+	letter-spacing: 0.025rem;
+	border-radius: 3rem;
+	border: 0.2rem solid var(--primary);
+}
+.addressCard-cta-outlined {
+	background-color: var(--back-secondary);
+	color: var(--primary);
+	border: 0.2rem solid var(--primary);
+}
+
+/* Address Form */
+
+.address-modal-conatiner {
+	z-index: 10;
+	top: 0;
+	left: 0;
+	position: fixed;
+	background-color: rgba(0, 0, 0, 0.1);
+	width: 100%;
+	height: 100vh;
+	backdrop-filter: blur(0.095rem);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.align-horizontal {
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+}
+.cta-outlined {
+	background-color: var(--back-primary);
+	color: var(--primary);
+	border: 0.2rem solid var(--primary);
+}
+
+.address-form-cta {
+	margin: 0.5rem 1rem;
+	padding: 1rem;
+}
+
+@media screen and (max-width: 1024px) {
+	.address-modal-content {
+		width: 80vw;
+	}
+}
+
+@media screen and (max-width: 360px) {
+	.pad1 {
+		padding: 1rem;
+	}
+}

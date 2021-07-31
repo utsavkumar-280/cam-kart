@@ -1,5 +1,6 @@
 import "./profile.css";
 import { useAuth } from "../../../Context";
+import { useAppDataContext } from "../../../Context";
 import { FaUserCircle } from "react-icons/fa";
 
 export const ProfileInfo = () => {
@@ -10,6 +11,8 @@ export const ProfileInfo = () => {
 
 		logout,
 	} = useAuth();
+
+	const { dispatch: dataDispatch } = useAppDataContext();
 
 	return (
 		<div className="profile-card">
@@ -26,7 +29,10 @@ export const ProfileInfo = () => {
 				</p>
 			</div>
 
-			<button onClick={() => logout()} className="form-submit-cta">
+			<button
+				onClick={() => logout({ dataDispatch })}
+				className="form-submit-cta"
+			>
 				Logout
 			</button>
 		</div>
