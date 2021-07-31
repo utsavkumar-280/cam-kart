@@ -34,7 +34,7 @@ const App = () => {
 
 	useEffect(() => {
 		setupAuthExceptionHandler(logout, navigate);
-	}, []);
+	}, [logout]);
 
 	const { pathname } = useLocation();
 	useEffect(() => {
@@ -51,7 +51,7 @@ const App = () => {
 			callCart(dispatch, token);
 			callAddress(authDispatch, token);
 		}
-	}, []);
+	}, [token, dispatch, authDispatch]);
 
 	console.log({ state });
 

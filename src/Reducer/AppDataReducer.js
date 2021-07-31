@@ -76,6 +76,23 @@ export const AppDataReducer = (state, { type, payload }) => {
 				filters: { ...state.filters, includeOutOfStock: payload },
 			};
 
+		case "LOGOUT_DATA_RESET":
+			return {
+				...state,
+				products: [],
+				cart: {
+					products: [],
+					address: null,
+				},
+				wishlist: [],
+				orders: [],
+				filters: {
+					categoryFilter: [],
+					brandFilter: [],
+					includeOutOfStock: true,
+				},
+				sortBy: "",
+			};
 		default:
 			return state;
 	}
