@@ -114,10 +114,11 @@ export const AuthProvider = ({ children }) => {
 		}
 	};
 
-	const logout = () => {
+	const logout = ({ dataDispatch }) => {
 		delete axios.defaults.headers.common["Authorization"];
 		localStorage?.removeItem("user_cred");
 		dispatch({ type: "LOGOUT" });
+		dataDispatch({ type: "LOGOUT_DATA_RESET" });
 	};
 
 	return (
