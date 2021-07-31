@@ -79,7 +79,6 @@ export const AppDataReducer = (state, { type, payload }) => {
 		case "LOGOUT_DATA_RESET":
 			return {
 				...state,
-				products: [],
 				cart: {
 					products: [],
 					address: null,
