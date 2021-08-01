@@ -63,7 +63,7 @@ export const AddressForm = ({ thisAddress, setEditable, setEditorOpen }) => {
 	return (
 		<div className="address-modal-conatiner">
 			<div className="address-modal-content">
-				<div className="form-card ">
+				<div className="form-card border1">
 					<Formik
 						initialValues={{
 							fullName: `${thisAddress?.fullName || ""}`,

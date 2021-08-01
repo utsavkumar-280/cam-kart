@@ -58,7 +58,7 @@
 	align-items: center;
 	padding: 5rem;
 	background-color: var(--back-secondary);
-	border-radius: 3rem;
+	border-radius: 1.75rem;
 	transition: all ease 0.25s;
 }
 
