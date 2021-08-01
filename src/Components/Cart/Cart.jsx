@@ -1,36 +1,50 @@
 import "./cart.css";
+import { useState } from "react";
 import { CartCard } from "./CartCard";
+import { CartAddress } from "./CartAddress";
+import { CartReceipt } from "./CartReceipt";
+import { useAppDataContext } from "../../Context";
+import { OrderConfirmation } from "./OrderConfirmation";
 
 export const Cart = () => {
+	const { state } = useAppDataContext();
+	const [orderStatus, setOrderStatus] = useState("");
+	const [orderId, setOrderId] = useState("");
+
 	return (
 		<div className="cart-container">
 			<div className="cart-main">
-				<h1>Cart</h1>
-				<div className="cart-content">
-					<section className="order-info">
-						<section className="address-select">
-							<div>
-								<h4>Deliver to:</h4>
-								<p>Select address</p>
+				{orderStatus === "SUCCESS" ? (
+					<OrderConfirmation orderId={orderId} />
+				) : (
+					<>
+						<h1>Cart</h1>
+						{state?.cart?.products?.length === 0 ? (
+							<p>Cart is empty</p>
+						) : (
+							<div className="cart-content">
+								<section className="order-info">
+									<CartAddress />
+									<section className="cart-list">
+										{state?.cart?.products?.map(({ product, quantity }) => (
+											<CartCard
+												key={product._id}
+												product={product}
+												quantity={quantity}
+											/>
+										))}
+									</section>
+								</section>
+								<section className="order-summary-container">
+									<CartReceipt
+										setOrderId={setOrderId}
+										setOrderStatus={setOrderStatus}
+									/>
+								</section>
 							</div>
-							<button className="address-cta">Change</button>
-						</section>
-						<section className="cart-list">
-							<CartCard />
-							<CartCard />
-							<CartCard />
-							<CartCard />
-						</section>
-					</section>
-					<section className="order-summary-container">
-						<section className="order-summary-content">
-							<section className="order-summary">Order summary</section>
-							<section className="place-order-cta">
-								<button>Place Order</button>
-							</section>
-						</section>
-					</section>
-				</div>
+						)}
+					</>
+				)}
 			</div>
 		</div>
 	);

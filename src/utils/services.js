@@ -132,7 +132,7 @@ export const addToWishlist = async ({
 				Authorization: `Bearer ${token}`,
 			},
 		});
-		console.log({ response });
+		console.log({ WISHLISTresponse: response });
 		dispatch({ type: "SET_WISHLIST", payload: response });
 	} catch (error) {
 		console.log(error);
@@ -170,6 +170,7 @@ export const addToCart = async ({ dispatch, product, setDisable, token }) => {
 export const incProductInCart = async ({
 	dispatch,
 	product,
+	quantity,
 	setDisable,
 	token,
 }) => {
@@ -182,7 +183,7 @@ export const incProductInCart = async ({
 			url: `${CAMKART_API}/cart`,
 			data: {
 				_id: product._id,
-				quantity: product.quantity + 1,
+				quantity: quantity + 1,
 				isActive: true,
 			},
 			headers: {
@@ -201,6 +202,7 @@ export const incProductInCart = async ({
 export const decProductInCart = async ({
 	dispatch,
 	product,
+	quantity,
 	setDisable,
 	token,
 }) => {
@@ -213,7 +215,7 @@ export const decProductInCart = async ({
 			url: `${CAMKART_API}/cart`,
 			data: {
 				_id: product._id,
-				quantity: product.quantity - 1,
+				quantity: quantity - 1,
 				isActive: true,
 			},
 			headers: {

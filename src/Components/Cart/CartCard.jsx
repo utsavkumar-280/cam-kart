@@ -1,30 +1,26 @@
-import { FiPlus, FiMinus } from "react-icons/fi";
+import { useState } from "react";
+import { CartCardCta } from "./CartCardCta";
 
-export const CartCard = () => {
+export const CartCard = ({ product, quantity }) => {
+	const [isDisable, setDisable] = useState(false);
 	return (
 		<section className="cart-card">
-			<img
-				src="https://i.postimg.cc/gJPZNW57/mini-passport-pic.jpg"
-				alt="product-pic"
-			/>
+			<img src={product.img} alt="product-pic" />
 			<div className="cart-card-info">
 				<div className="cart-card-text">
-					<h2>Product Name</h2>
-					<p>Price</p>
-				</div>
-				<div className="cart-card-cta-container">
-					<div className="cart-modify-cta">
-						<button>
-							<FiPlus />
-						</button>
-						<div>1</div>
-						<button>
-							<FiMinus />
-						</button>
+					<h2>{product.name}</h2>
+					<div className="cart-card-price">
+						<p>₹ {product.price * quantity}</p>
+						<p>₹ {product.oldPrice * quantity}</p>
+						<p>({product.offer}%)</p>
 					</div>
-
-					<button className="move-wishlist-cta">Move to Wishlist</button>
 				</div>
+				<CartCardCta
+					product={product}
+					quantity={quantity}
+					isDisable={isDisable}
+					setDisable={setDisable}
+				/>
 			</div>
 		</section>
 	);
