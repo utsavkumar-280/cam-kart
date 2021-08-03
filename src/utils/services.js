@@ -65,6 +65,7 @@ export const callOrders = async (dispatch, token) => {
 		});
 
 		dispatch({ type: "SET_ORDERS", payload: response });
+		console.log({ orderResponse: response });
 	} catch (error) {
 		console.log(error);
 	}
@@ -259,5 +260,34 @@ export const removeProductInCart = async ({
 		console.log(error);
 	} finally {
 		setDisable(false);
+	}
+};
+
+export const placeOrder = async ({
+	dispatch,
+	token,
+	orderDetails,
+	setOrderStatus,
+	setOrderId,
+}) => {
+	try {
+		const {
+			data: { response },
+		} = await axios({
+			method: "POST",
+			url: `${CAMKART_API}/orders`,
+			data: orderDetails,
+			headers: {
+				Authorization: `Bearer ${token}`,
+			},
+		});
+		dispatch({ type: "RESET_CART" });
+		console.log({ placeOrderResponse: response });
+		setOrderId(response);
+		setOrderStatus("SUCCESS");
+	} catch (error) {
+		console.log(error);
+		setOrderStatus("FAILURE");
+		setOrderId("");
 	}
 };

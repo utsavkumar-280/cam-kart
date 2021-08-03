@@ -12,6 +12,7 @@ export {
 	incProductInCart,
 	decProductInCart,
 	removeProductInCart,
+	placeOrder,
 } from "./services";
 
 export {

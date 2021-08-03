@@ -89,7 +89,7 @@
 	z-index: 10;
 	top: 0;
 	left: 0;
-	position: absolute;
+	position: fixed;
 	overflow-y: auto;
 	background-color: rgba(0, 0, 0, 0.1);
 	width: 100%;
@@ -106,14 +106,14 @@
 	justify-content: space-between;
 }
 .cta-outlined {
-	background-color: var(--back-primary);
-	color: var(--primary);
-	border: 0.2rem solid var(--primary);
+	background-color: var(--back-primary) !important;
+	color: var(--primary) !important;
+	border: 0.2rem solid var(--primary) !important;
 }
 
 .address-form-cta {
-	margin: 0.5rem 1rem;
-	padding: 1rem;
+	margin: 0.5rem 1rem !important;
+	padding: 1rem !important;
 }
 
 @media screen and (max-width: 1024px) {

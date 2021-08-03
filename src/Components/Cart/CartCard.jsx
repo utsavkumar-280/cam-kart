@@ -10,9 +10,7 @@ export const CartCard = ({ product, quantity }) => {
 				<div className="cart-card-text">
 					<h2>{product.name}</h2>
 					<div className="cart-card-price">
-						<p>₹ {product.price * quantity}</p>
-						<p>₹ {product.oldPrice * quantity}</p>
-						<p>({product.offer}%)</p>
+						<p>{`₹ ${product.price * quantity} (${product.offer}%off)`}</p>
 					</div>
 				</div>
 				<CartCardCta

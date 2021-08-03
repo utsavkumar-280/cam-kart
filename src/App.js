@@ -20,7 +20,13 @@ import {
 	NotFoundPage,
 } from "./Components";
 import { useAppDataContext, useAuth } from "./Context";
-import { callProducts, callWishlist, callCart, callAddress } from "./utils";
+import {
+	callProducts,
+	callWishlist,
+	callCart,
+	callAddress,
+	callOrders,
+} from "./utils";
 import { ProfileInfo } from "./Components/Auth/Profile/ProfileInfo";
 
 const App = () => {
@@ -50,8 +56,17 @@ const App = () => {
 			callWishlist(dispatch, token);
 			callCart(dispatch, token);
 			callAddress(authDispatch, token);
+			callOrders(dispatch, token);
 		}
-	}, [token, dispatch, authDispatch]);
+	}, [
+		token,
+		callWishlist,
+		callCart,
+		callAddress,
+		callOrders,
+		dispatch,
+		authDispatch,
+	]);
 
 	console.log({ state });
 
