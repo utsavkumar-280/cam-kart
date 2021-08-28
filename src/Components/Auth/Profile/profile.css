@@ -1,0 +1,107 @@
+.profile-container {
+	width: 100%;
+	font-family: "Montserrat", sans-serif;
+	display: flex;
+	justify-content: center;
+}
+
+.profile-main {
+	width: 80%;
+	min-height: 90vh;
+	display: grid;
+	grid-template-columns: auto;
+	grid-template-rows: 1fr 9fr;
+	margin: 1rem 0;
+}
+.profile-links-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-wrap: wrap;
+}
+.profile-links-cta {
+	padding: 0.5rem 2rem;
+	color: var(--primary);
+	background-color: var(--back-primary);
+	border: 0.1rem solid var(--primary);
+	text-decoration: none;
+	border-radius: 3rem;
+	margin: 0.5vw;
+	font-size: 1.75rem;
+	font-weight: 500;
+	letter-spacing: 0.05rem;
+	font-family: "Montserrat", sans-serif;
+	transition: all ease 0.25s;
+}
+.profile-links-cta:hover {
+	color: var(--head-secondary);
+	background-color: var(--primary);
+	transition: all ease 0.25s;
+}
+.profile-links-active {
+	color: var(--head-secondary);
+	background-color: var(--primary);
+	transition: all ease 0.25s;
+}
+.profile-routes {
+	display: flex;
+	justify-content: center;
+	align-items: flex-start;
+}
+
+.profile-card {
+	min-width: 40vw;
+	min-height: 50vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+	padding: 5rem;
+	background-color: var(--back-secondary);
+	border-radius: 1.75rem;
+	transition: all ease 0.25s;
+}
+
+.profile-logo {
+	font-size: 15rem;
+	color: var(--primary);
+	transition: all ease 0.25s;
+}
+
+.profile-text {
+	color: var(--head-primary);
+	font-family: "Montserrat", sans-serif;
+	margin: 0.325rem;
+	font-size: 1.75rem;
+	letter-spacing: 0.1rem;
+	font-weight: 500;
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	transition: all ease 0.25s;
+}
+.primary-color {
+	color: var(--primary);
+	font-weight: 400;
+}
+@media screen and (max-width: 880px) {
+	.profile-main {
+		width: 95%;
+	}
+	.profile-card {
+		min-width: 80vw;
+		padding: 2rem;
+	}
+}
+
+@media screen and (max-width: 540px) {
+	.profile-text {
+		display: grid;
+		grid-template-columns: auto;
+	}
+}
+
+@media screen and (max-width: 540px) {
+	.profile-links-cta {
+		padding: 0.5rem 1.5rem;
+	}
+}

@@ -1,0 +1,25 @@
+:root {
+	--primary: #4d25e0;
+	--secondary: #df0a03;
+	--back-primary: #ffffff;
+	--back-secondary: #f5f4fa;
+	--head-primary: #200e66;
+	--head-secondary: #ffffff;
+	--stars: #ffce74;
+	--hero-small: #d5b6e4;
+	--hero-button: #9480df;
+	--hero-button-secondary: #aea2db;
+}
+
+* {
+	box-sizing: border-box;
+	border: 0;
+	margin: 0;
+	padding: 0;
+}
+html {
+	font-size: 62.5%;
+}
+.app-main {
+	min-height: 100vh;
+}
