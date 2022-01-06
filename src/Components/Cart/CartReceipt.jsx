@@ -17,11 +17,11 @@ export const CartReceipt = ({ setOrderId, setOrderStatus }) => {
 
 	const placedOrder = {
 		products: cart?.products?.map(({ product, quantity }) => ({
-			product: product._id,
+			product: product?._id,
 			quantity,
 		})),
 		payment: { totalAmount },
-		address: selectedAddress._id,
+		address: selectedAddress?._id,
 	};
 
 	return (
