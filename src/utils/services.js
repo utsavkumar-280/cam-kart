@@ -27,7 +27,7 @@ export const callWishlist = async (dispatch, token) => {
 				Authorization: `Bearer ${token}`,
 			},
 		});
-		console.log({ callWishlistResponse: response });
+
 		dispatch({ type: "SET_WISHLIST", payload: response });
 	} catch (error) {
 		console.log(error);
@@ -65,7 +65,6 @@ export const callOrders = async (dispatch, token) => {
 		});
 
 		dispatch({ type: "SET_ORDERS", payload: response });
-		console.log({ orderResponse: response });
 	} catch (error) {
 		console.log(error);
 	}
@@ -82,7 +81,7 @@ export const callAddress = async (dispatch, token) => {
 				Authorization: `Bearer ${token}`,
 			},
 		});
-		console.log({ addressResponse: response });
+
 		dispatch({
 			type: "SET_ADDRESS_DETAILS",
 			payload: { addressDetails: response },
@@ -133,7 +132,7 @@ export const addToWishlist = async ({
 				Authorization: `Bearer ${token}`,
 			},
 		});
-		console.log({ WISHLISTresponse: response });
+
 		dispatch({ type: "SET_WISHLIST", payload: response });
 	} catch (error) {
 		console.log(error);
@@ -159,7 +158,7 @@ export const addToCart = async ({ dispatch, product, setDisable, token }) => {
 				Authorization: `Bearer ${token}`,
 			},
 		});
-		// console.log({ response });
+
 		dispatch({ type: "SET_CART", payload: response });
 	} catch (error) {
 		console.log(error);
@@ -282,7 +281,8 @@ export const placeOrder = async ({
 			},
 		});
 		dispatch({ type: "RESET_CART" });
-		console.log({ placeOrderResponse: response });
+
+		callOrders(dispatch, token);
 		setOrderId(response);
 		setOrderStatus("SUCCESS");
 	} catch (error) {
