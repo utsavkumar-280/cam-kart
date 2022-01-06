@@ -27,7 +27,7 @@ export const AuthProvider = ({ children }) => {
 	};
 
 	const [state, dispatch] = useReducer(AuthReducer, initialState);
-	console.log({ authState: state });
+
 	const navigate = useNavigate();
 
 	const signup = async ({ firstname, lastname, email, password }) => {
