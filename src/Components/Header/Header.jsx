@@ -9,11 +9,10 @@ export const Header = () => {
 	const {
 		state: { wishlist, cart },
 	} = useAppDataContext();
-	console.log({ wishlist, cart });
+
 	const {
 		state: {
 			userDetails: { userFirstName },
-			token,
 		},
 	} = useAuth();
 

@@ -31,7 +31,7 @@ import { ProfileInfo } from "./Components/Auth/Profile/ProfileInfo";
 
 const App = () => {
 	const navigate = useNavigate();
-	const { state, dispatch } = useAppDataContext();
+	const { dispatch } = useAppDataContext();
 	const {
 		state: { token },
 		logout,
@@ -40,7 +40,7 @@ const App = () => {
 
 	useEffect(() => {
 		setupAuthExceptionHandler(logout, navigate);
-	}, [logout]);
+	}, [logout, navigate]);
 
 	const { pathname } = useLocation();
 	useEffect(() => {
@@ -58,17 +58,9 @@ const App = () => {
 			callAddress(authDispatch, token);
 			callOrders(dispatch, token);
 		}
-	}, [
-		token,
-		callWishlist,
-		callCart,
-		callAddress,
-		callOrders,
-		dispatch,
-		authDispatch,
-	]);
+	}, [token, authDispatch, dispatch]);
 
-	console.log({ state });
+	//console.log({ state });
 
 	return (
 		<div className="app-container">
