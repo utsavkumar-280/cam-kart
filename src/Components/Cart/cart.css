@@ -53,11 +53,13 @@
 }
 
 .order-summary-content {
-	width: 50%;
+	width: 70%;
 	padding: 1rem 2rem;
 	margin: 1rem 1.5rem 1rem 0;
 	background-color: var(--back-secondary);
 	border-radius: 1rem;
+	box-shadow: rgb(0 0 0 / 10%) 0px 10px 15px -3px,
+		rgb(0 0 0 / 5%) 0px 4px 6px -2px;
 }
 .order-summary {
 	margin: 1rem 0;
@@ -94,6 +96,10 @@
 	outline: none;
 	font-family: "Montserrat", sans-serif;
 }
+.place-order-cta > button:hover {
+	box-shadow: rgb(0 0 0 / 10%) 0px 10px 15px -3px,
+		rgb(0 0 0 / 5%) 0px 4px 6px -2px;
+}
 
 .address-select {
 	width: 90%;
@@ -104,6 +110,8 @@
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
+	box-shadow: rgb(0 0 0 / 10%) 0px 10px 15px -3px,
+		rgb(0 0 0 / 5%) 0px 4px 6px -2px;
 }
 
 .order-summary-container {
@@ -150,6 +158,8 @@
 	display: grid;
 	grid-template-columns: 3.5fr 6.5fr;
 	grid-template-rows: auto;
+	box-shadow: rgb(0 0 0 / 10%) 0px 10px 15px -3px,
+		rgb(0 0 0 / 5%) 0px 4px 6px -2px;
 }
 
 .cart-card > img {
@@ -365,9 +375,8 @@
 	.cart-card {
 		width: 100%;
 		margin: 0.5rem 0rem;
-		display: grid;
-		grid-template-columns: auto;
-		grid-template-rows: 1fr 0.5fr;
+		display: flex;
+		flex-direction: column;
 	}
 
 	.cart-card-cta-container {
@@ -380,6 +389,18 @@
 
 	.move-wishlist-cta {
 		padding: 0.5rem;
+	}
+}
+
+@media screen and (max-width: 1280px) {
+	.order-summary-content {
+		width: 80%;
+	}
+}
+
+@media screen and (max-width: 768px) {
+	.order-summary-content {
+		width: 100%;
 	}
 }
 
