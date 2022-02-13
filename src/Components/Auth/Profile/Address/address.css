@@ -39,6 +39,8 @@
 	padding: 2rem 3rem;
 	border-radius: 1.75rem;
 	background-color: var(--back-secondary);
+	box-shadow: rgb(0 0 0 / 10%) 0px 10px 15px -3px,
+		rgb(0 0 0 / 5%) 0px 4px 6px -2px;
 }
 
 .addressCard-info > h2 {
@@ -122,6 +124,9 @@
 	}
 	.border1 {
 		border-radius: 1.75rem;
+	}
+	.adddress-main {
+		width: 100%;
 	}
 }
 

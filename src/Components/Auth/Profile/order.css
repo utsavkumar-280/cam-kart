@@ -1,0 +1,125 @@
+.orders-page-container {
+	width: 100%;
+	font-family: "Montserrat", sans-serif;
+	display: flex;
+	justify-content: center;
+}
+
+.orders-page-content {
+	width: 80%;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: center;
+}
+
+.orders-page-content > h1 {
+	margin: 1rem 0;
+	font-size: 3rem;
+	font-weight: 700;
+	letter-spacing: 0.025rem;
+}
+
+.order-container {
+	width: 60%;
+	padding: 2.5rem 2rem;
+	margin: 1.5rem 0;
+	border-radius: 1.5rem;
+	background-color: var(--back-secondary);
+	box-shadow: rgb(0 0 0 / 10%) 0px 10px 15px -3px,
+		rgb(0 0 0 / 5%) 0px 4px 6px -2px;
+}
+
+.order-container h1 {
+	font-size: 2.125rem;
+	color: var(--primary);
+}
+.order-container h2 {
+	font-size: 1.5rem;
+	font-weight: 500;
+}
+
+.order-card-info {
+	margin: 2rem 0;
+}
+
+.order-card-info > h2 {
+	margin: 0.25rem 0;
+}
+
+.order-card-product-container {
+	margin: 2rem 0;
+	padding: 1rem;
+	background-color: white;
+	border-radius: 1rem;
+	display: flex;
+	transition: all ease 0.25s;
+}
+
+.order-card-product-img {
+	width: 17.5rem;
+	height: 17.5rem;
+	object-fit: contain;
+	object-position: 50% 50%;
+	border-radius: 1.5rem;
+	margin: 0 1rem 0 0;
+	padding: 1rem;
+}
+.order-card-product-info {
+	flex-grow: 1;
+}
+
+.order-card-product-info > h2 {
+	font-size: 1.875rem;
+	font-weight: 600;
+}
+.order-card-product-info > h3 {
+	font-size: 1.6rem;
+	font-weight: 500;
+	color: var(--primary);
+	margin: 0.25rem 0;
+}
+
+.order-card-product-info > p {
+	font-size: 1.6rem;
+	font-weight: 500;
+	margin: 2rem 0;
+}
+
+@media screen and (max-width: 1024px) {
+	.orders-page-content {
+		width: 100%;
+	}
+
+	.order-container {
+		width: 75%;
+	}
+}
+@media screen and (max-width: 768px) {
+	.order-card-product-img {
+		padding: 2rem;
+	}
+}
+
+@media screen and (max-width: 640px) {
+	.order-container {
+		width: 90%;
+	}
+}
+
+@media screen and (max-width: 411px) {
+	.order-container {
+		width: 95%;
+	}
+	.order-card-product-container {
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+	}
+	.order-card-product-img {
+		width: 100%;
+		height: auto;
+		padding: 5rem;
+		margin: 0;
+	}
+}

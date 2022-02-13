@@ -152,6 +152,13 @@
 	font-size: 2rem;
 	font-weight: 600;
 	letter-spacing: 0.05rem;
+	transition: all ease 0.25s;
+}
+
+.form-submit-cta:hover {
+	box-shadow: rgb(0 0 0 / 10%) 0px 10px 15px -3px,
+		rgb(0 0 0 / 5%) 0px 4px 6px -2px;
+	transition: all ease 0.25s;
 }
 .hide-cta {
 	font-size: 2rem;
