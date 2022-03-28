@@ -1,10 +1,16 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./styles.css";
 import { ProductButtons } from "./ProductButtons";
 import { BsFillStarFill } from "react-icons/bs";
 
 export const ProductCard = ({ product }) => {
 	const [isDisable, setDisable] = useState(false);
+
+	useEffect(() => {
+		return () => {
+			setDisable(false);
+		};
+	}, []);
 	return (
 		<div className="products-card">
 			<div className="products-img-container">

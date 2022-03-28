@@ -1,10 +1,17 @@
 import "./wishlist.css";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { CartButton } from "../Product/ProductsCatalog/CartButton";
 import { RemoveBtn } from "./RemoveBtn";
 
 export const WishlistCard = ({ product }) => {
 	const [isDisable, setDisable] = useState(false);
+
+	useEffect(() => {
+		return () => {
+			setDisable(false);
+		};
+	}, []);
+
 	return (
 		<div className="products-card">
 			<div className="products-img-container">

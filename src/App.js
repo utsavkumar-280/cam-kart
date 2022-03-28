@@ -31,7 +31,7 @@ import { ProfileInfo } from "./Components/Auth/Profile/ProfileInfo";
 
 const App = () => {
 	const navigate = useNavigate();
-	const { state, dispatch } = useAppDataContext();
+	const { dispatch } = useAppDataContext();
 	const {
 		state: { token },
 		logout,

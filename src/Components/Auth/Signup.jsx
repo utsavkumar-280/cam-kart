@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Formik, Field, Form, ErrorMessage } from "formik";
 import { useLocation, Navigate } from "react-router-dom";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
@@ -15,6 +15,12 @@ export const Signup = () => {
 	const [signupError, setSignupError] = useState("");
 	const { state } = useLocation();
 	const previousPath = { from: state?.from ? state.from : "/" };
+
+	useEffect(() => {
+		return () => {
+			setIsLoading(false);
+		};
+	}, []);
 
 	const {
 		state: { token },

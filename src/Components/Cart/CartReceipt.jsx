@@ -12,7 +12,7 @@ export const CartReceipt = ({ setOrderId, setOrderStatus }) => {
 	const { selectedAddress } = useSelectedAddress();
 
 	const {
-		state: { userDetails, token },
+		state: { token },
 	} = useAuth();
 
 	const placedOrder = {

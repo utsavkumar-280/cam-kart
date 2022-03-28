@@ -1,8 +1,15 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { CartCardCta } from "./CartCardCta";
 
 export const CartCard = ({ product, quantity }) => {
 	const [isDisable, setDisable] = useState(false);
+
+	useEffect(() => {
+		return () => {
+			setDisable(false);
+		};
+	}, []);
+
 	return (
 		<section className="cart-card">
 			<img src={product.img} alt="product-pic" />

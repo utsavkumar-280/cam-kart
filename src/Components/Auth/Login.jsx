@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link, Navigate, useLocation } from "react-router-dom";
 import { Formik, Field, Form, ErrorMessage } from "formik";
 import * as Yup from "yup";
@@ -12,6 +12,12 @@ export const Login = () => {
 	const [loginError, setLoginError] = useState("");
 	const { state } = useLocation();
 	const previousPath = { from: state?.from ? state.from : "/" };
+
+	useEffect(() => {
+		return () => {
+			setIsLoading(false);
+		};
+	}, []);
 
 	const {
 		state: { token },

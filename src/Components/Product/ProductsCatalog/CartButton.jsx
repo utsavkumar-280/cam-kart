@@ -9,6 +9,7 @@ export const CartButton = ({ product, isDisable, setDisable }) => {
 		state: { token },
 	} = useAuth();
 	const navigate = useNavigate();
+
 	return (
 		<button
 			className="cta-button"
