@@ -1,9 +1,11 @@
-import "./address.css";
-import { CAMKART_API } from "../../../../utils";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Formik, Field, Form, ErrorMessage } from "formik";
+import { CircleSpinner } from "react-spinners-kit";
 import * as Yup from "yup";
 import axios from "axios";
+
+import "./address.css";
+import { CAMKART_API } from "../../../../utils";
 import { useAuth } from "../../../../Context";
 
 export const AddressForm = ({ thisAddress, setEditable, setEditorOpen }) => {
@@ -60,6 +62,13 @@ export const AddressForm = ({ thisAddress, setEditable, setEditorOpen }) => {
 			setAddressError("Please try again!");
 		}
 	};
+
+	useEffect(() => {
+		return () => {
+			setIsLoading(false);
+		};
+	}, []);
+
 	return (
 		<div className="address-modal-conatiner">
 			<div className="address-modal-content">
@@ -196,7 +205,14 @@ export const AddressForm = ({ thisAddress, setEditable, setEditorOpen }) => {
 									type="submit"
 									className="form-submit-cta address-form-cta"
 								>
-									{isLoading ? "Saving..." : "Save"}
+									{isLoading ? (
+										<>
+											<p style={{ paddingRight: "1rem" }}>Saving</p>
+											<CircleSpinner size={20} loading />
+										</>
+									) : (
+										"Save"
+									)}
 								</button>
 								<button
 									type="button"
