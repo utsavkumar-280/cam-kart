@@ -13,7 +13,7 @@ export const Home = () => {
 						20% OFF PROMOTIONAL SALE
 					</div>
 
-					<div className="hero-head-large">Whatever you need for a</div>
+					<div className="hero-head-large">Everything you need for a</div>
 					<div className="hero-head-large">great picture.</div>
 					<div className="hero-head-medium margin-5">
 						<p>

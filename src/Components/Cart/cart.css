@@ -32,7 +32,7 @@
 .cart-content {
 	width: 100%;
 	display: grid;
-	grid-template-columns: 1fr 1fr;
+	grid-template-columns: 1.25fr 1fr;
 	grid-template-rows: auto;
 }
 
@@ -199,40 +199,48 @@
 	margin: 0.75rem 0;
 }
 
-.cart-modify-cta {
+.cart-modify-cta-container {
 	display: flex;
 	padding: 0.5rem 0;
 }
 
-.cart-modify-cta > button {
-	font-family: "Montserrat", sans-serif;
-	color: var(--primary);
-	background-color: var(--back-secondary);
-	border: 0.2rem solid var(--primary);
-	border-radius: 1rem;
-	padding: 0.5rem 1rem;
-	font-size: 2rem;
-	font-weight: 500;
+.cart-modify-cta {
+	width: 6rem;
+	height: 4rem;
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	padding: 1rem 2rem;
+	margin: 0.5rem 0.75rem 0.5rem 0;
+	background-color: rgb(255, 255, 255);
+	color: var(--head-primary);
+	font-size: 1.75rem;
+	font-weight: 700;
+	text-decoration: none;
+	font-family: "Montserrat", sans-serif;
+	border-radius: 1rem;
 	cursor: pointer;
-}
-.cart-modify-cta > button:hover {
-	color: var(--back-secondary);
-	background-color: var(--primary);
-	transition: all ease 0.25s;
+	transition: all 0.25s ease;
+	box-shadow: rgba(209, 209, 209, 0.1) 0px 10px 15px -3px,
+		rgba(190, 190, 190, 0.05) 0px 4px 6px -2px;
 }
 
-.cart-modify-cta > div {
-	font-family: "Montserrat", sans-serif;
+.cart-modify-cta svg {
+	stroke-width: 2.5;
+}
+
+.cart-modify-cta:hover {
 	color: var(--primary);
-	background-color: var(--back-secondary);
-	border: 0.2rem solid var(--primary);
-	border-radius: 1rem;
-	padding: 0.5rem 1.5rem;
-	margin: 0 0.5rem;
-	font-size: 2rem;
+	transition: all 0.25s ease;
+	box-shadow: rgba(68, 68, 68, 0.1) 0px 10px 15px -3px,
+		rgba(66, 66, 66, 0.05) 0px 4px 6px -2px;
+}
+
+.cart-modify-cta:hover > .cta-button-icon-filled {
+	display: block;
+}
+.cart-modify-cta:hover > .cta-button-icon-outline {
+	display: none;
 }
 
 .move-wishlist-cta {

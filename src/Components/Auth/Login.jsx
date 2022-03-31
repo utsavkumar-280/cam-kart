@@ -3,6 +3,8 @@ import { Link, Navigate, useLocation } from "react-router-dom";
 import { Formik, Field, Form, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
+import { CircleSpinner } from "react-spinners-kit";
+
 import { useAuth } from "../../Context";
 import "./authStyles.css";
 
@@ -119,7 +121,14 @@ export const Login = () => {
 								</div>
 								<div className="login-error">{loginError}</div>
 								<button type="submit" className="form-submit-cta">
-									{isLoading ? "Logging In..." : "Login"}
+									{isLoading ? (
+										<>
+											<p style={{ paddingRight: "1rem" }}>Logging in</p>
+											<CircleSpinner size={20} loading />
+										</>
+									) : (
+										"Login"
+									)}
 								</button>
 								<Link
 									to="/forgot-pass"

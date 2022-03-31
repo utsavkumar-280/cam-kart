@@ -31,7 +31,7 @@ import { ProfileInfo } from "./Components/Auth/Profile/ProfileInfo";
 
 const App = () => {
 	const navigate = useNavigate();
-	const { dispatch } = useAppDataContext();
+	const { state, dispatch } = useAppDataContext();
 	const {
 		state: { token },
 		logout,
@@ -60,6 +60,7 @@ const App = () => {
 		}
 	}, [token, authDispatch, dispatch]);
 
+	console.log({ state });
 	return (
 		<div className="app-container">
 			<div className="app-main">

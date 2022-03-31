@@ -9,6 +9,7 @@
 	--hero-small: #d5b6e4;
 	--hero-button: #9480df;
 	--hero-button-secondary: #aea2db;
+	--primary-loader-bg: rgba(77, 37, 224, 0.3);
 }
 
 * {

@@ -117,8 +117,10 @@ export const addToWishlist = async ({
 	token,
 	product,
 	setDisable,
+	setIsLoading,
 }) => {
 	setDisable(true);
+	setIsLoading(true);
 	try {
 		const {
 			data: { response },
@@ -134,6 +136,7 @@ export const addToWishlist = async ({
 		});
 
 		dispatch({ type: "SET_WISHLIST", payload: response });
+		setIsLoading(false);
 	} catch (error) {
 		console.log(error);
 	} finally {
@@ -141,8 +144,15 @@ export const addToWishlist = async ({
 	}
 };
 
-export const addToCart = async ({ dispatch, product, setDisable, token }) => {
+export const addToCart = async ({
+	dispatch,
+	product,
+	setDisable,
+	setIsLoading,
+	token,
+}) => {
 	setDisable(true);
+	setIsLoading(true);
 	try {
 		const {
 			data: { response },
@@ -160,6 +170,7 @@ export const addToCart = async ({ dispatch, product, setDisable, token }) => {
 		});
 
 		dispatch({ type: "SET_CART", payload: response });
+		setIsLoading(false);
 	} catch (error) {
 		console.log(error);
 	} finally {
@@ -171,10 +182,12 @@ export const incProductInCart = async ({
 	dispatch,
 	product,
 	quantity,
-	setDisable,
 	token,
+	setDisable,
+	setIsIncreasing,
 }) => {
 	setDisable(true);
+	setIsIncreasing(true);
 	try {
 		const {
 			data: { response },
@@ -192,6 +205,7 @@ export const incProductInCart = async ({
 		});
 
 		dispatch({ type: "SET_CART", payload: response });
+		setIsIncreasing(false);
 	} catch (error) {
 		console.log(error);
 	} finally {
@@ -203,10 +217,12 @@ export const decProductInCart = async ({
 	dispatch,
 	product,
 	quantity,
-	setDisable,
 	token,
+	setDisable,
+	setIsDecreasing,
 }) => {
 	setDisable(true);
+	setIsDecreasing(true);
 	try {
 		const {
 			data: { response },
@@ -224,6 +240,7 @@ export const decProductInCart = async ({
 		});
 
 		dispatch({ type: "SET_CART", payload: response });
+		setIsDecreasing(false);
 	} catch (error) {
 		console.log(error);
 	} finally {
@@ -234,10 +251,18 @@ export const decProductInCart = async ({
 export const removeProductInCart = async ({
 	dispatch,
 	product,
-	setDisable,
 	token,
+	setDisable,
+	setIsRemoving,
+	setIsLoading,
 }) => {
 	setDisable(true);
+	if (setIsRemoving) {
+		setIsRemoving(true);
+	}
+	if (setIsLoading) {
+		setIsLoading(true);
+	}
 	try {
 		const {
 			data: { response },
@@ -255,6 +280,12 @@ export const removeProductInCart = async ({
 		});
 
 		dispatch({ type: "SET_CART", payload: response });
+		if (setIsRemoving) {
+			setIsRemoving(false);
+		}
+		if (setIsLoading) {
+			setIsLoading(false);
+		}
 	} catch (error) {
 		console.log(error);
 	} finally {
