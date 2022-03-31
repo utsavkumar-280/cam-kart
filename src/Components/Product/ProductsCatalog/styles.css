@@ -157,7 +157,37 @@
 	color: var(--primary);
 }
 
+.cta-button-alt {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 5rem;
+	background-color: rgb(255, 255, 255);
+	color: var(--head-primary);
+	border-radius: 1rem;
+	box-shadow: rgba(209, 209, 209, 0.1) 0px 10px 15px -3px,
+		rgba(190, 190, 190, 0.05) 0px 4px 6px -2px;
+}
+
+.cta-button-alt:hover {
+	color: var(--primary);
+	cursor: pointer;
+	transition: all 0.25s ease;
+	box-shadow: rgba(68, 68, 68, 0.1) 0px 10px 15px -3px,
+		rgba(66, 66, 66, 0.05) 0px 4px 6px -2px;
+}
+
+.cta-button-alt:hover > .cta-button-icon-filled {
+	display: block;
+}
+.cta-button-alt:hover > .cta-button-icon-outline {
+	display: none;
+}
+
 .cta-button {
+	display: flex;
+	justify-content: center;
+	align-items: center;
 	padding: 1rem 2rem;
 	background-color: rgb(255, 255, 255);
 	color: var(--head-primary);
@@ -178,12 +208,7 @@
 	box-shadow: rgba(68, 68, 68, 0.1) 0px 10px 15px -3px,
 		rgba(66, 66, 66, 0.05) 0px 4px 6px -2px;
 }
-.cta-button:hover > .cta-button-icon-filled {
-	display: block;
-}
-.cta-button:hover > .cta-button-icon-outline {
-	display: none;
-}
+
 .cta-button-icon-filled {
 	font-size: 2.25rem;
 	font-weight: 800;
@@ -199,6 +224,29 @@
 	font-size: 2.25rem;
 	font-weight: 800;
 	display: block;
+}
+
+.loaderContainer {
+	display: flex;
+	flex-direction: column;
+	justify-content: stretch;
+	align-items: center;
+}
+.loaderContainer div {
+	border: 3.5px solid var(--primary-loader-bg);
+	border-right-color: var(--primary);
+}
+
+.loaderContainerAlt {
+	display: flex;
+	flex-direction: column;
+	justify-content: stretch;
+	align-items: center;
+	font-size: 2.25rem;
+}
+.loaderContainerAlt div {
+	border: 3.5px solid var(--primary-loader-bg);
+	border-right-color: var(--primary);
 }
 
 @media screen and (max-width: 1640px) {
