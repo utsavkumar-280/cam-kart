@@ -24,7 +24,9 @@ export const CartAddress = () => {
 					<>
 						<div>
 							<h4>Deliver to:</h4>
-							<p>Select address</p>
+							<p style={{ color: "var(--primary)", fontWeight: "500" }}>
+								Please select an address
+							</p>
 						</div>
 					</>
 				)}

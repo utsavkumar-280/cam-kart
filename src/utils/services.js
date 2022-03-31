@@ -299,8 +299,12 @@ export const placeOrder = async ({
 	orderDetails,
 	setOrderStatus,
 	setOrderId,
+	setIsLoading,
 }) => {
 	try {
+		if (setIsLoading) {
+			setIsLoading(true);
+		}
 		const {
 			data: { response },
 		} = await axios({
@@ -316,6 +320,9 @@ export const placeOrder = async ({
 		callOrders(dispatch, token);
 		setOrderId(response);
 		setOrderStatus("SUCCESS");
+		if (setIsLoading) {
+			setIsLoading(false);
+		}
 	} catch (error) {
 		console.log(error);
 		setOrderStatus("FAILURE");
