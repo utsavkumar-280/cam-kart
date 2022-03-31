@@ -1,9 +1,13 @@
+import { useState, useEffect } from "react";
+import { CircleSpinner } from "react-spinners-kit";
+
 import { useAppDataContext, useAuth } from "../../Context";
 import { useOrderDetails } from "./useOrderDetails";
 import { useSelectedAddress } from "./useSelectedAddress";
 import { placeOrder } from "../../utils";
 
 export const CartReceipt = ({ setOrderId, setOrderStatus }) => {
+	const [isLoading, setIsLoading] = useState(false);
 	const {
 		state: { cart },
 		dispatch,
@@ -24,6 +28,12 @@ export const CartReceipt = ({ setOrderId, setOrderStatus }) => {
 		address: selectedAddress?._id,
 	};
 
+	useEffect(() => {
+		return () => {
+			setIsLoading(false);
+		};
+	}, []);
+
 	return (
 		<section className="order-summary-content">
 			<h4>Order Summary</h4>
@@ -42,11 +52,20 @@ export const CartReceipt = ({ setOrderId, setOrderStatus }) => {
 							orderDetails: placedOrder,
 							setOrderId,
 							setOrderStatus,
+							setIsLoading,
 						})
 					}
 					disabled={selectedAddress ? false : true}
 				>
-					Place Order
+					{" "}
+					{isLoading ? (
+						<>
+							<p style={{ paddingRight: "1rem" }}>Placing Order</p>
+							<CircleSpinner size={20} loading />
+						</>
+					) : (
+						"Place Order"
+					)}
 				</button>
 			</section>
 		</section>

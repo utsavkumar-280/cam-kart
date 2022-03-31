@@ -85,9 +85,12 @@
 
 .place-order-cta > button {
 	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 	color: var(--back-primary);
 	background-color: var(--primary);
-	padding: 1rem 2rem;
+	padding: 1.5rem 2rem;
 	border-radius: 1.25rem;
 	font-size: 2.25rem;
 	font-weight: 600;
@@ -96,6 +99,12 @@
 	outline: none;
 	font-family: "Montserrat", sans-serif;
 }
+
+.place-order-cta div {
+	border: 4px solid rgba(255, 255, 255, 0.322);
+	border-right-color: white;
+}
+
 .place-order-cta > button:hover {
 	box-shadow: rgb(0 0 0 / 10%) 0px 10px 15px -3px,
 		rgb(0 0 0 / 5%) 0px 4px 6px -2px;
